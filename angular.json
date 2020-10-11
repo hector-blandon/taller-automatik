@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/custom-theme.scss",
               "src/styles.css"
             ],
@@ -122,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "automatik"
+  "defaultProject": "automatik",
+  "cli": {
+    "analytics": "298d61cf-402d-4b72-a4d8-a8b6e33d992c"
+  }
 }

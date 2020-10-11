@@ -11,12 +11,21 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ContactComponent } from './components/contact/contact.component';
+import { ClientComponent } from './components/client/client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    CarouselComponent,
+    FooterComponent,
+    ContactComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +35,8 @@ import {MatButtonModule} from '@angular/material/button';
     AppRoutingModule,
     MatSidenavModule,
     MatListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   exports: [
     MatSidenavModule
