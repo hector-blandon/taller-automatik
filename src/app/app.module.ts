@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './components/contact/contact.component';
 import { ClientComponent } from './components/client/client.component';
+import { RegistrarAdminComponent } from './components/registrar-admin/registrar-admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ClientComponent } from './components/client/client.component';
     CarouselComponent,
     FooterComponent,
     ContactComponent,
-    ClientComponent
+    ClientComponent,
+    RegistrarAdminComponent
   ],
   imports: [
     BrowserModule,
