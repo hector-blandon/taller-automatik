@@ -8,15 +8,16 @@ import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './pages/navbar/navbar.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './components/contact/contact.component';
 import { ClientComponent } from './components/client/client.component';
 import { UpdateStockComponent } from './components/update-stock/update-stock.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { UpdateStockComponent } from './components/update-stock/update-stock.com
     FooterComponent,
     ContactComponent,
     ClientComponent,
-    UpdateStockComponent
+    UpdateStockComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,12 +39,11 @@ import { UpdateStockComponent } from './components/update-stock/update-stock.com
     MatSidenavModule,
     MatListModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
   ],
-  exports: [
-    MatSidenavModule
-  ],
+  exports: [MatSidenavModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

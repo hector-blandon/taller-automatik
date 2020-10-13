@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StockService } from 'src/app/services/stock.service';
+import { Stock } from '../../models/stockModel';
 
 @Component({
   selector: 'app-update-stock',
@@ -6,18 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-stock.component.css'],
 })
 export class UpdateStockComponent implements OnInit {
-  id: string;
-  quantity: number;
   show = false;
 
-  constructor() {}
+  constructor(private stockService: StockService) {}
+
+  saveStock(id: string, quantity: number) {
+    let stock: Stock = { id, quantity };
+    this.stockService.saveStock(stock).subscribe((result: any) => {
+      console.log(result);
+      this.show = result;
+    });
+  }
 
   ngOnInit(): void {}
-
-  updateStock(id: string, quantity: number) {
-    this.id = id;
-    this.quantity = quantity;
-
-    this.show = true;
-  }
 }
