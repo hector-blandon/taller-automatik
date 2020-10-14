@@ -7,10 +7,10 @@ import { Stock } from '../models/stockModel';
   providedIn: 'root',
 })
 export class StockService {
-  url = 'http://localhost:3001/api';
+  url = 'http://localhost:3000';
   constructor(private http: HttpClient) {}
 
   saveStock(stock: Stock): Observable<any> {
-    return this.http.post(this.url, stock);
+    return this.http.post(this.url + '/stock', stock);
   }
 }

@@ -9,15 +9,20 @@ import { Stock } from '../../models/stockModel';
 })
 export class UpdateStockComponent implements OnInit {
   show = false;
+  empty = false;
 
   constructor(private stockService: StockService) {}
 
   saveStock(id: string, quantity: number) {
-    let stock: Stock = { id, quantity };
-    this.stockService.saveStock(stock).subscribe((result: any) => {
-      console.log(result);
-      this.show = result;
-    });
+    if (id == null || quantity == null) {
+      this.empty = true;
+    } else {
+      let stock: Stock = { id, quantity };
+      this.stockService.saveStock(stock).subscribe((result: any) => {
+        console.log(result);
+        this.show = result;
+      });
+    }
   }
 
   ngOnInit(): void {}

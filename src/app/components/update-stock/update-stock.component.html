@@ -19,6 +19,10 @@
                 <label>Actualización del repuesto #{{id.value}} realizada!</label>
             </div>
 
+            <div *ngIf="empty" class="alert alert-warning" role="alert">
+                <label>No pueden haber secciones vacías</label>
+            </div>
+
         </form>
 
     </div>
