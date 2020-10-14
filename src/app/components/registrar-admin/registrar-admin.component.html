@@ -2,7 +2,7 @@
     <h1>Registro Administrador</h1>
     <ul class="tab-group">
         <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
+        <!--<li class="tab"><a href="#login">Log In</a></li>-->
     </ul>
 
     <div class="tab-content">
@@ -41,12 +41,20 @@
                     <input type="password" class="form-control" placeholder="Set A Password" #password/>
                 </div>
 
-                <button type="button" class="button button-block" (click)="guardar(primerN.value,apellido.value,email.value,password.value,nit.value)">Get Started</button>
+                <button type="button" class="button button-block" (click)="saveA(primerN.value,apellido.value,nit.value,email.value,password.value)">Get Started</button>
 
                 <div *ngIf="mostrar" class="alert alert-info" role="alert">
 
                     Los datos han sido registrados
                 </div>
+
+                <div *ngIf="empty" class="alert alert-warning" role="alert">
+
+                    No pueden haber campos vacíos
+                </div>
+
+
+
             </form>
 
         </div>
@@ -75,6 +83,8 @@
             </form>
 
         </div>
+
+
 
     </div>
     <!-- tab-content -->

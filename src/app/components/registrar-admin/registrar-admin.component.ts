@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../../services/admin.service';
+import { Admin } from '../../models/adminModel';
+
+
 
 @Component({
   selector: 'app-registro-admin',
-  templateUrl: './registro-admin.component.html',
-  styleUrls: ['./registro-admin.component.css'],
+  templateUrl: './registrar-admin.component.html',
+  styleUrls: ['./registrar-admin.component.css'],
 })
 export class RegistroAdminComponent implements OnInit {
 
@@ -14,18 +18,28 @@ export class RegistroAdminComponent implements OnInit {
   public password: string;
   public nit: string;
   public mostrar = false;
- 
-  constructor() {}
+  public empty = false;
+  
+  constructor(private adminService: AdminService)
+   {}
 
+   saveA( primerN: string, apellido: string, nit: string, email: string, password: string)
+   {
+    if (primerN == null || apellido == null || nit == null || email == null || password == null)
+  {
+    this.empty = true;
+
+  }
+    else
+    {
+    let admin: Admin = {primerN , apellido, nit, email, password};
+    this.adminService.saveA(admin).subscribe((res: any) => {
+      console.log(res);
+      this.mostrar = res;
+
+    });
+  }
+   }
   ngOnInit(): void {}
 
-  
-  public guardar(primerN: string, apellido: string, email: string, password: string , nit: string) {
-    this.primerN = primerN;
-    this.apellido = apellido;
-    this.email = email;
-    this.password = password;
-    this.mostrar = true;
-    this.nit = nit;
-}
 }

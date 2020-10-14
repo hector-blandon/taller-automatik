@@ -16,7 +16,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './components/contact/contact.component';
 import { ClientComponent } from './components/client/client.component';
-import { RegistrarAdminComponent } from './components/registrar-admin/registrar-admin.component';
+import { UpdateStockComponent } from './components/update-stock/update-stock.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RegistroAdminComponent } from './components/registrar-admin/registrar-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { RegistrarAdminComponent } from './components/registrar-admin/registrar-
     FooterComponent,
     ContactComponent,
     ClientComponent,
-    RegistrarAdminComponent
+    UpdateStockComponent,
+    RegistroAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { RegistrarAdminComponent } from './components/registrar-admin/registrar-
     MatSidenavModule,
     MatListModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     NgbModule
+
   ],
   exports: [
     MatSidenavModule
