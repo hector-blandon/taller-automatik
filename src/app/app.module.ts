@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './components/contact/contact.component';
 import { ClientComponent } from './components/client/client.component';
+import { UpdateStockComponent } from './components/update-stock/update-stock.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -38,8 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     BrowserAnimationsModule,
     NgbModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   exports: [MatSidenavModule],
   providers: [],
