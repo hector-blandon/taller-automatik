@@ -16,7 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './components/contact/contact.component';
 import { ClientComponent } from './components/client/client.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { ClientComponent } from './components/client/client.component';
     MatSidenavModule,
     MatListModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
 
   ],
   exports: [MatSidenavModule],
