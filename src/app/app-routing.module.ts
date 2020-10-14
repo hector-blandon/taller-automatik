@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { UpdateStockComponent } from './components/update-stock/update-stock.component';
 import { RegistroAdminComponent } from './components/registrar-admin/registrar-admin.component';
+import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agregar-vehiculo.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'update', component: UpdateStockComponent },
   { path: 'registroAdmin', component: RegistroAdminComponent },
+  {path: 'vehiculo', component: AgregarVehiculoComponent}
 ];
 
 @NgModule({

@@ -19,7 +19,10 @@ import { ClientComponent } from './components/client/client.component';
 import { UpdateStockComponent } from './components/update-stock/update-stock.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroAdminComponent } from './components/registrar-admin/registrar-admin.component';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agregar-vehiculo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +34,7 @@ import { RegistroAdminComponent } from './components/registrar-admin/registrar-a
     ClientComponent,
     UpdateStockComponent,
     RegistroAdminComponent,
+    AgregarVehiculoComponent
   ],
   imports: [
     BrowserModule,
