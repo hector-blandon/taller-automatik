@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { UpdateStockComponent } from './components/update-stock/update-stock.component';
 
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
