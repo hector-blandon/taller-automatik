@@ -18,6 +18,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ClientComponent } from './components/client/client.component';
 import { UpdateStockComponent } from './components/update-stock/update-stock.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistroAdminComponent } from './components/registrar-admin/registrar-admin.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     ContactComponent,
     ClientComponent,
     UpdateStockComponent,
+    RegistroAdminComponent,
   ],
   imports: [
     BrowserModule,
