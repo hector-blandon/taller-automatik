@@ -1,22 +1,22 @@
 <div class="form">
 
     <div class="tab-content">
-        <h1>Actualice el stock</h1>
+        <h1>Actualizar piezas</h1>
 
         <form action="/" method="post">
 
             <div class="field-wrap">
-                <input type="text" class="form-control" placeholder="ID*" required #id/>
+                <input type="text" class="form-control" placeholder="Código*" required #id/>
             </div>
 
             <div class="field-wrap">
                 <input type="number" class="form-control" placeholder="Cantidad*" required #quantity/>
             </div>
 
-            <button title="Actualizar" type="button" class="button button-block" (click)="saveStock(id.value, quantity.value)">Actualizar</button>
+            <button title="Actualizar" type="button" class="button button-block" (click)="actualizarPieza(id.value, quantity.value)">Actualizar</button>
 
             <div *ngIf="show" class="alert alert-info" role="alert">
-                <label>Actualización del repuesto #{{id.value}} realizada!</label>
+                <label>#{{res}}</label>
             </div>
 
             <div *ngIf="empty" class="alert alert-warning" role="alert">

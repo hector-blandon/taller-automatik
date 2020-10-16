@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
-import { UpdateStockComponent } from './components/update-stock/update-stock.component';
+import { ActualizarPiezaComponent } from './components/actualizar-pieza/actualizar-pieza.component';
 import { RegistroAdminComponent } from './components/registrar-admin/registrar-admin.component';
 import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agregar-vehiculo.component';
 
@@ -10,9 +10,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'navbar', component: NavbarComponent },
-  { path: 'update', component: UpdateStockComponent },
+  { path: 'pieza', component: ActualizarPiezaComponent },
   { path: 'registroAdmin', component: RegistroAdminComponent },
-  {path: 'vehiculo', component: AgregarVehiculoComponent}
+  { path: 'vehiculo', component: AgregarVehiculoComponent },
 ];
 
 @NgModule({

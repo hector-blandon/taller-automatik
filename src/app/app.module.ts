@@ -16,12 +16,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './components/contact/contact.component';
 import { ClientComponent } from './components/client/client.component';
-import { UpdateStockComponent } from './components/update-stock/update-stock.component';
+import { ActualizarPiezaComponent } from './components/actualizar-pieza/actualizar-pieza.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroAdminComponent } from './components/registrar-admin/registrar-admin.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
 import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agregar-vehiculo.component';
 @NgModule({
   declarations: [
@@ -32,9 +29,9 @@ import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agre
     FooterComponent,
     ContactComponent,
     ClientComponent,
-    UpdateStockComponent,
+    ActualizarPiezaComponent,
     RegistroAdminComponent,
-    AgregarVehiculoComponent
+    AgregarVehiculoComponent,
   ],
   imports: [
     BrowserModule,
