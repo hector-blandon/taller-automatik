@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
+import { APP_ROUTING } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MatListModule } from '@angular/material/list';
@@ -38,7 +39,8 @@ import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agre
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    AppRoutingModule,
+    // AppRoutingModule,
+    APP_ROUTING ,
     MatSidenavModule,
     MatListModule,
     BrowserAnimationsModule,

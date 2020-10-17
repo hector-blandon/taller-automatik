@@ -14,7 +14,7 @@ export class PiezaService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
     return this.http.post('/pieza/actualizar/', JSON.stringify(pieza), {
-      headers,
+      headers
     });
   }
 }
