@@ -21,6 +21,9 @@ import { ActualizarPiezaComponent } from './components/actualizar-pieza/actualiz
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroAdminComponent } from './components/registrar-admin/registrar-admin.component';
 import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agregar-vehiculo.component';
+import { TeamComponent } from './components/team/team.component';
+import { RegPiezaComponent } from './components/reg-pieza/reg-pieza.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,10 +32,13 @@ import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agre
     CarouselComponent,
     FooterComponent,
     ContactComponent,
-    ClientComponent,
     ActualizarPiezaComponent,
     RegistroAdminComponent,
     AgregarVehiculoComponent,
+    TeamComponent,
+    ClientComponent,
+    RegPiezaComponent
+
   ],
   imports: [
     BrowserModule,

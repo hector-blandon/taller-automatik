@@ -1,0 +1,48 @@
+<div class="form">
+
+    <div class="tab-content">
+        <div id="registrar">
+            <h1>Registrar Pieza</h1>
+
+            <form action="/">
+
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <input type="text" required autocomplete="off" placeholder="Nombre" #nombre>
+                    </div>
+
+                    <div class="field-wrap">
+                        <input type="number" required autocomplete="off" placeholder="Cantidad" #cantidad>
+                    </div>
+                </div>
+
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <input type="number" required autocomplete="off" placeholder="Valor" #valor>
+                    </div>
+
+                    <div class="field-wrap">
+                        <input type="text" required autocomplete="off" placeholder="Código" #codigo>
+                    </div>
+                </div>
+
+                <button type="submit" (click)="save(nombre.value,cantidad.value,valor.value,codigo.value)" class="button button-block">Registrar</button>
+
+            </form>
+
+        </div>
+
+        <div id="login">
+            <h1>Welcome Back!</h1>
+
+            <form action="/">
+
+            </form>
+
+        </div>
+
+    </div>
+    <!-- tab-content -->
+
+</div>
+<!-- /form -->

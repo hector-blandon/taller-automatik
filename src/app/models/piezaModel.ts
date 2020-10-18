@@ -1,3 +1,6 @@
-export class Pieza {
-  constructor(public id: string = null, public quantity: number = 0) {}
+export class PiezaModel {
+  nombre: string;
+  cantidad: number;
+  valor: number;
+  codigo: string;
 }

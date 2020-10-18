@@ -1,48 +1,40 @@
 <div class="form">
 
-    <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Registrar</a></li>
-    </ul>
-
     <div class="tab-content">
-        <div id="signup">
+        <div id="registrar">
             <h1>Registrar Cliente</h1>
 
-            <form action="/" method="post">
+            <form action="/">
 
                 <div class="top-row">
                     <div class="field-wrap">
-                        <label>Nombres<span class="req">*</span></label>
-                        <input type="text" required autocomplete="off" />
+                        <input type="text" required autocomplete="off" placeholder="Nombres" #nombre>
                     </div>
 
                     <div class="field-wrap">
-                        <label>Apellidos<span class="req">*</span></label>
-                        <input type="text" required autocomplete="off" />
+                        <input type="text" required autocomplete="off" placeholder="Apellidos" #apellido>
                     </div>
                 </div>
 
                 <div class="field-wrap">
-                    <label>Correo Electrónico<span class="req">*</span></label>
-                    <input type="email" required autocomplete="off" />
+                    <input type="email" required autocomplete="off" placeholder="Correo" #correo>
                 </div>
 
                 <div class="field-wrap">
-                    <label>Dirección<span class="req">*</span></label>
-                    <input type="email" required autocomplete="off" />
+                    <input type="text" required autocomplete="off" placeholder="Dirección" #direccion>
                 </div>
 
                 <div class="top-row">
                     <div class="field-wrap">
-                        <label>NIT<span class="req">*</span></label>
-                        <input type="number" required autocomplete="off" />
+                        <input type="text" required autocomplete="off" placeholder="Nit" #nit>
                     </div>
 
                     <div class="field-wrap">
-                        <label>Teléfono<span class="req">*</span></label>
-                        <input type="number" required autocomplete="off" />
+                        <input type="number" required autocomplete="off" placeholder="Teléfono" #telefono>
                     </div>
                 </div>
+
+                <button type="submit" (click)="save(nombre.value,apellido.value,correo.value,direccion.value,nit.value, telefono.value)" class="button button-block">Registrar</button>
 
             </form>
 
@@ -51,7 +43,7 @@
         <div id="login">
             <h1>Welcome Back!</h1>
 
-            <form action="/" method="post">
+            <form action="/">
 
             </form>
 
