@@ -24,7 +24,7 @@ export class RegPiezaComponent implements OnInit {
         icon: 'warning',
         title: 'debe diligenciar todos los campos!',
         showConfirmButton: true,
-        timer: 5000
+        timer: 30000
       });
 
     } else {

@@ -8,12 +8,12 @@ import { Vehiculo } from '../models/vehiculo.model';
 })
 export class VehiculoService {
 
-  baseUrl:string = 'http://localhost:3000/api/backend';
+  baseUrl:string = "http://localhost:3000/api/backend";
   constructor(private http: HttpClient) { }
 
 
   saveA(vehiculo: Vehiculo): Observable<any>{
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post(this.baseUrl + '/vehiculo', JSON.stringify(vehiculo), { headers: httpHeaders });
+    return this.http.post(this.baseUrl + "/vehiculos", JSON.stringify(vehiculo), { headers: httpHeaders });
   }
 }
