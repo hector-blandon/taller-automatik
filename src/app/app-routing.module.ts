@@ -7,7 +7,7 @@ import { RegistroAdminComponent } from './components/registrar-admin/registrar-a
 import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agregar-vehiculo.component';
 import { ClientComponent } from './components/client/client.component';
 import { RegPiezaComponent } from './components/reg-pieza/reg-pieza.component';
-
+import { RegistrarMecanicoComponent } from './components/registrar-mecanico/registrar-mecanico.component';
 // const routes: Routes = [
 //   { path: 'home', component: HomeComponent },
 //   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -30,6 +30,7 @@ const APP_ROUTES: Routes = [
   { path: 'registroAdmin', component: RegistroAdminComponent },
   { path: 'vehiculo', component: AgregarVehiculoComponent },
   { path: 'cliente', component: ClientComponent },
+  { path: 'mecanico', component: RegistrarMecanicoComponent },
 
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 
