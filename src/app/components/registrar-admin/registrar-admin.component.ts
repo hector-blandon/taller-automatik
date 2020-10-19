@@ -19,38 +19,35 @@ export class RegistroAdminComponent implements OnInit {
   public correo: string;
   public contrasenia: string;
   public nit: string;
-  
 
-  
-  constructor(private adminService: AdminService)
-   {}
+  constructor(private adminService: AdminService) { }
 
-   saveA( nombre: string, apellido: string, telefono:string, nit: string, correo: string, contrasenia: string){
+  saveA(nombre: string, apellido: string, telefono: string, nit: string, correo: string, contrasenia: string) {
 
-    if (nombre == '' || apellido == '' || telefono == '' || nit == '' || correo == '' || contrasenia == ''){
-    Swal.fire({
-      icon: 'warning',
-      title: 'debe diligenciar todos los campos!',
-      showConfirmButton: true,
-      timer: 5000
-
-  });
-}else{
-
-    let admin: Admin = {nombre , apellido, nit, correo, contrasenia,telefono};
-    this.adminService.saveA(admin).subscribe((res: any) =>{
+    if (nombre == '' || apellido == '' || telefono == '' || nit == '' || correo == '' || contrasenia == '') {
       Swal.fire({
-        icon: 'success',
-        title: res.mensaje,
+        icon: 'warning',
+        title: 'debe diligenciar todos los campos!',
         showConfirmButton: true,
-        timer: 30000
-      });
-      window.location.reload();
-    });
-  }
-}
+        timer: 5000
 
-  
-  ngOnInit(): void {}
+      });
+    } else {
+
+      let admin: Admin = { nombre, apellido, nit, correo, contrasenia, telefono };
+      this.adminService.saveA(admin).subscribe((res: any) => {
+        Swal.fire({
+          icon: 'success',
+          title: res.mensaje,
+          showConfirmButton: true,
+          timer: 30000
+        });
+        window.location.reload();
+      });
+    }
+  }
+
+
+  ngOnInit(): void { }
 
 }

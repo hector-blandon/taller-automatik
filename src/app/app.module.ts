@@ -23,6 +23,7 @@ import { RegistroAdminComponent } from './components/registrar-admin/registrar-a
 import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agregar-vehiculo.component';
 import { TeamComponent } from './components/team/team.component';
 import { RegPiezaComponent } from './components/reg-pieza/reg-pieza.component';
+import { RegistrarMecanicoComponent } from './components/registrar-mecanico/registrar-mecanico.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RegPiezaComponent } from './components/reg-pieza/reg-pieza.component';
     AgregarVehiculoComponent,
     TeamComponent,
     ClientComponent,
-    RegPiezaComponent
+    RegPiezaComponent,
+    RegistrarMecanicoComponent
 
   ],
   imports: [
