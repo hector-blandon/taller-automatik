@@ -33,7 +33,7 @@ login(correo : string, contrasenia:string){
           timer: 30000
         });
         this.delay(3000);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/dashboard']);
 
       }
       else{

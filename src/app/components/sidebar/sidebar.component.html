@@ -10,6 +10,18 @@
         <ul>
             <li>
                 <a href="http://justinfarrow.com">
+                    <i class="fa fa-user fa-lg" style="color: white;" width="16" height="16"></i>
+                    <!-- <span class="nav-text" style="color:white;" width="16" height="16">
+                            Bienvenido Administrador
+                        </span> -->
+                    <h4 style="color:white;">Bienvenido Administrador</h4>
+                </a>
+
+            </li>
+            <hr/>
+
+            <li>
+                <a href="http://justinfarrow.com">
                     <i class="fa fa-home fa-2x"></i>
                     <span class="nav-text">
                             Dashboard
@@ -88,7 +100,7 @@
 
         <ul class="logout">
             <li>
-                <a href="#">
+                <a [routerLink]="['/home']">
                     <i class="fa fa-power-off fa-2x"></i>
                     <span class="nav-text">
                             Logout

@@ -24,13 +24,9 @@ import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agre
 import { TeamComponent } from './components/team/team.component';
 import { RegPiezaComponent } from './components/reg-pieza/reg-pieza.component';
 import { RegistrarMecanicoComponent } from './components/registrar-mecanico/registrar-mecanico.component';
-<<<<<<< HEAD
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-=======
 import { LoginComponent } from './pages/login/login.component';
->>>>>>> 4cd9f62... login
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,12 +42,9 @@ import { LoginComponent } from './pages/login/login.component';
     ClientComponent,
     RegPiezaComponent,
     RegistrarMecanicoComponent,
-<<<<<<< HEAD
     SidebarComponent,
-    DashboardComponent
-=======
+    DashboardComponent,
     LoginComponent
->>>>>>> 4cd9f62... login
 
   ],
   imports: [
