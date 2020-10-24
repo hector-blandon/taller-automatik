@@ -8,21 +8,8 @@ import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agre
 import { ClientComponent } from './components/client/client.component';
 import { RegPiezaComponent } from './components/reg-pieza/reg-pieza.component';
 import {LoginComponent} from './pages/login/login.component';
+import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import { RegistrarMecanicoComponent } from './components/registrar-mecanico/registrar-mecanico.component';
-// const routes: Routes = [
-//   { path: 'home', component: HomeComponent },
-//   { path: '', redirectTo: '/home', pathMatch: 'full' },
-//   { path: 'navbar', component: NavbarComponent },
-//   { path: 'pieza', component: ActualizarPiezaComponent },
-//   { path: 'registroAdmin', component: RegistroAdminComponent },
-//   { path: 'vehiculo', component: AgregarVehiculoComponent },
-// ];
-
-// @NgModule({
-//   imports: [RouterModule.forRoot(routes)],
-//   exports: [RouterModule],
-// })
-// export class AppRoutingModule {}
 const APP_ROUTES: Routes = [
 
   { path: 'home', component: HomeComponent },
@@ -33,7 +20,7 @@ const APP_ROUTES: Routes = [
   { path: 'cliente', component: ClientComponent },
   { path: 'mecanico', component: RegistrarMecanicoComponent },
   { path: 'login', component: LoginComponent },
-
+  { path: 'dashboard', component: DashboardComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 
 ];
