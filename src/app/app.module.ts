@@ -24,6 +24,8 @@ import { AgregarVehiculoComponent } from './pages/vehiculo/agregar-vehiculo/agre
 import { TeamComponent } from './components/team/team.component';
 import { RegPiezaComponent } from './components/reg-pieza/reg-pieza.component';
 import { RegistrarMecanicoComponent } from './components/registrar-mecanico/registrar-mecanico.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { RegistrarMecanicoComponent } from './components/registrar-mecanico/regi
     TeamComponent,
     ClientComponent,
     RegPiezaComponent,
-    RegistrarMecanicoComponent
+    RegistrarMecanicoComponent,
+    SidebarComponent,
+    DashboardComponent
 
   ],
   imports: [
