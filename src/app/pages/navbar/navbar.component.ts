@@ -8,10 +8,12 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 })
 export class NavbarComponent implements OnInit {
 
+ 
   constructor() { }
 
   ngOnInit(): void {
   }
   onClick() {
+   
   }
 }

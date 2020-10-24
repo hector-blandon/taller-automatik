@@ -17,4 +17,8 @@ export class AdminService {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(this.baseUrl + "/administrador", JSON.stringify(admin), { headers: httpHeaders });
   }
+  login(credenciales : any): Observable<any>{  
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(this.baseUrl + "/login", JSON.stringify(credenciales), { headers: httpHeaders });
+  }
 }
