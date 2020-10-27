@@ -27,6 +27,8 @@ import { RegistrarMecanicoComponent } from './components/registrar-mecanico/regi
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
+import { TableListAdministradorComponent } from './components/table-list-administrador/table-list-administrador.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,8 @@ import { LoginComponent } from './pages/login/login.component';
     RegistrarMecanicoComponent,
     SidebarComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    TableListAdministradorComponent
 
   ],
   imports: [
