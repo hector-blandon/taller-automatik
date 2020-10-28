@@ -28,6 +28,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TableListAdministradorComponent } from './components/table-list-administrador/table-list-administrador.component';
+import { ActualizarAdminComponent } from './components/actualizar-admin/actualizar-admin.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { TableListAdministradorComponent } from './components/table-list-adminis
     SidebarComponent,
     DashboardComponent,
     LoginComponent,
-    TableListAdministradorComponent
+    TableListAdministradorComponent,
+    ActualizarAdminComponent
 
   ],
   imports: [

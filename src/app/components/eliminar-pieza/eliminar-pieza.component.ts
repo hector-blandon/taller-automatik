@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PiezaService } from '../../services/pieza.service';
 import Swal from 'sweetalert2';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-eliminar-pieza',
@@ -10,12 +10,12 @@ import Swal from 'sweetalert2';
 export class EliminarPiezaComponent implements OnInit {
   codigo: string;
 
-  constructor(private piezaService: PiezaService) {}
+  constructor(private piezaService: AdminService) {}
 
   ngOnInit(): void {}
 
   delete(codigo: string) {
-    if (codigo == '') {
+    if (codigo === '') {
       Swal.fire({
         icon: 'warning',
         title: 'debe diligenciar todos los campos!',
