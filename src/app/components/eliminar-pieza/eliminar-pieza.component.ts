@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-import { VehiculoService } from '../../services/vehiculo.service';
-import { Vehiculo } from '../../models/vehiculo.model';
+import { ClienteService } from '../../services/clienteService';
 
 @Component({
   selector: 'app-eliminar-pieza',
@@ -11,7 +10,7 @@ import { Vehiculo } from '../../models/vehiculo.model';
 export class EliminarPiezaComponent implements OnInit {
   codigo: string;
 
-  constructor(private piezaService: VehiculoService) {}
+  constructor(private piezaService: ClienteService) {}
 
   ngOnInit(): void {}
 

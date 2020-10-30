@@ -1,0 +1,38 @@
+<div class="form">
+
+    <div class="tab-content">
+        <h1>Actualizar Cliente</h1>
+
+        <form action="/" method="post">
+
+            <div class="top-row">
+                <div class="field-wrap">
+                    <label title="nombre y apellido" for="">{{cliente.nombre}} {{cliente.apellido}}</label>
+                </div>
+
+                <div class="field-wrap">
+                    <label title="nit" for="">{{cliente.nit}}</label>
+                </div>
+            </div>
+
+            <hr class="line">
+
+            <div class="field-wrap">
+                <input title="correo" type="email" class="form-control" required value={{cliente.correo}} #correo/>
+            </div>
+
+            <div class="field-wrap">
+                <input title="direccion" type="text" class="form-control" required value={{cliente.direccion}} required #direccion/>
+            </div>
+
+            <div class="field-wrap">
+                <input title="telefono" type="number" class="form-control" required value={{cliente.telefono}} required #telefono/>
+            </div>
+
+            <button title="Actualizar" type="button" class="button button-block" (click)="update(correo.value, direccion.value, telefono.value)">Actualizar</button>
+
+        </form>
+
+    </div>
+
+</div>

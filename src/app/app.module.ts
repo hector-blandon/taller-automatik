@@ -29,6 +29,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TableListAdministradorComponent } from './components/table-list-administrador/table-list-administrador.component';
 import { ActualizarAdminComponent } from './components/actualizar-admin/actualizar-admin.component';
+import { ActualizarClienteComponent } from './components/actualizar-cliente/actualizar-cliente.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ActualizarAdminComponent } from './components/actualizar-admin/actualiz
     LoginComponent,
     TableListAdministradorComponent,
     ActualizarAdminComponent,
+    ActualizarClienteComponent,
   ],
   imports: [
     BrowserModule,
