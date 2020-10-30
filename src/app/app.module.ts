@@ -30,6 +30,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { TableListAdministradorComponent } from './components/table-list-administrador/table-list-administrador.component';
 import { ActualizarAdminComponent } from './components/actualizar-admin/actualizar-admin.component';
 import { ActualizarClienteComponent } from './components/actualizar-cliente/actualizar-cliente.component';
+import { ActualizarMecanicoComponent } from './components/actualizar-mecanico/actualizar-mecanico.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ActualizarClienteComponent } from './components/actualizar-cliente/actu
     TableListAdministradorComponent,
     ActualizarAdminComponent,
     ActualizarClienteComponent,
+    ActualizarMecanicoComponent,
   ],
   imports: [
     BrowserModule,
