@@ -49,8 +49,7 @@ import { ActualizarAdminComponent } from './components/actualizar-admin/actualiz
     DashboardComponent,
     LoginComponent,
     TableListAdministradorComponent,
-    ActualizarAdminComponent
-
+    ActualizarAdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +57,7 @@ import { ActualizarAdminComponent } from './components/actualizar-admin/actualiz
     MatToolbarModule,
     MatButtonModule,
     // AppRoutingModule,
-    APP_ROUTING ,
+    APP_ROUTING,
     MatSidenavModule,
     MatListModule,
     BrowserAnimationsModule,
