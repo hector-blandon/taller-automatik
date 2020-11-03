@@ -24,6 +24,7 @@
         "@angular/router": "~9.1.1",
         "@ng-bootstrap/ng-bootstrap": "^7.0.0",
         "bootstrap": "^4.5.2",
+        "font-awesome": "^4.7.0",
         "html2canvas": "^1.0.0-rc.7",
         "jquery": "^3.5.1",
         "jspdf": "^1.5.3",
