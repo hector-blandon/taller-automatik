@@ -32,4 +32,11 @@ export class ClienteService {
       { headers: httpHeaders }
     );
   }
+
+  getId(id: number): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(this.baseUrl + '/clientes/buscarPorId/' + id, {
+      headers: httpHeaders,
+    });
+  }
 }

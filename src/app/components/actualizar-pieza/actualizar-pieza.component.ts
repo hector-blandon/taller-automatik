@@ -19,11 +19,10 @@ export class ActualizarPiezaComponent implements OnInit {
   constructor(private piezaService: PiezaService) {}
 
   ngOnInit(): void {
-    this.pieza.nombre = 'carburador sandero';
-    this.pieza.codigo = 'RS-c2019';
-
-    this.pieza.valor = 300000;
-    this.pieza.cantidad = 100;
+    let id = 3;
+    this.piezaService.getId(id).subscribe((res: any) => {
+      this.pieza = res[0];
+    });
   }
 
   update(valor: number, cantidad: number) {

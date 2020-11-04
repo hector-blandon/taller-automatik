@@ -18,11 +18,11 @@
             <hr class="line">
 
             <div class="field-wrap">
-                <input title="correo" type="text" class="form-control" required value={{admin.correo}} #correo/>
+                <input title="correo" type="text" class="form-control" autocomplete="off" required value={{admin.correo}} #correo/>
             </div>
 
             <div class="field-wrap">
-                <input title="telefono" type="number" class="form-control" required value={{admin.telefono}} required #telefono/>
+                <input title="telefono" type="number" class="form-control" autocomplete="off" required value={{admin.telefono}} required #telefono/>
             </div>
 
             <button title="Actualizar" type="button" class="button button-block" (click)="update(correo.value, telefono.value)">Actualizar</button>

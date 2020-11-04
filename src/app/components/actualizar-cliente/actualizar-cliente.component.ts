@@ -21,13 +21,10 @@ export class ActualizarClienteComponent implements OnInit {
   constructor(private clienteService: ClienteService) {}
 
   ngOnInit(): void {
-    this.cliente.nombre = 'Hola';
-    this.cliente.apellido = 'Mundo';
-    this.cliente.nit = '1234567';
-
-    this.cliente.correo = 'hola@mundo.com';
-    this.cliente.direccion = 'calle falsa #123';
-    this.cliente.telefono = '7777777';
+    let id = 5;
+    this.clienteService.getId(id).subscribe((res: any) => {
+      this.cliente = res[0];
+    });
   }
 
   update(correo: string, direccion: string, telefono: string) {

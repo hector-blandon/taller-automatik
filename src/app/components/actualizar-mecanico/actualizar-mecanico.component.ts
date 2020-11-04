@@ -21,13 +21,10 @@ export class ActualizarMecanicoComponent implements OnInit {
   constructor(private mecanicoService: MecanicoService) {}
 
   ngOnInit(): void {
-    this.mecanico.nombre = 'Chao';
-    this.mecanico.apellido = 'Universo';
-    this.mecanico.nit = '09876543';
-
-    this.mecanico.correo = 'chao@universo.com';
-    this.mecanico.direccion = 'carrera verdadera #809';
-    this.mecanico.telefono = '333333333';
+    let id = 1;
+    this.mecanicoService.getId(id).subscribe((res: any) => {
+      this.mecanico = res[0];
+    });
   }
 
   update(correo: string, direccion: string, telefono: string) {

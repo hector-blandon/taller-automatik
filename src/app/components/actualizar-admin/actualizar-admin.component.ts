@@ -21,12 +21,10 @@ export class ActualizarAdminComponent implements OnInit {
   constructor(private adminService: AdminService) {}
 
   ngOnInit(): void {
-    this.admin.nombre = 'Pedro';
-    this.admin.apellido = 'el Escamoso';
-    this.admin.nit = 'PeE1542';
-
-    this.admin.correo = 'pedrito@escamoso.com';
-    this.admin.telefono = '4981324';
+    let id = 2;
+    this.adminService.getId(id).subscribe((res: any) => {
+      this.admin = res[0];
+    });
   }
 
   update(correo: string, telefono: string) {
