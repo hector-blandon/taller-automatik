@@ -28,7 +28,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TableListAdministradorComponent } from './components/table-list-administrador/table-list-administrador.component';
-import { GenerarFacturaComponent } from './components/generar-factura/generar-factura.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,8 +47,7 @@ import { GenerarFacturaComponent } from './components/generar-factura/generar-fa
     SidebarComponent,
     DashboardComponent,
     LoginComponent,
-    TableListAdministradorComponent,
-    GenerarFacturaComponent
+    
 
   ],
   imports: [
