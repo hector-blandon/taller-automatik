@@ -47,7 +47,7 @@ import { TableListAdministradorComponent } from './components/table-list-adminis
     SidebarComponent,
     DashboardComponent,
     LoginComponent,
-    
+    TableListAdministradorComponent
 
   ],
   imports: [
