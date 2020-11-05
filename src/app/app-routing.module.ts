@@ -10,6 +10,7 @@ import { RegPiezaComponent } from './components/reg-pieza/reg-pieza.component';
 import {LoginComponent} from './pages/login/login.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import { RegistrarMecanicoComponent } from './components/registrar-mecanico/registrar-mecanico.component';
+import { GenerarFacturaComponent } from './components/generar-factura/generar-factura.component';
 const APP_ROUTES: Routes = [
 
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,7 @@ const APP_ROUTES: Routes = [
   { path: 'mecanico', component: RegistrarMecanicoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent},
+  { path: 'factura', component: GenerarFacturaComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 
 ];
