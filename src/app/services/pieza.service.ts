@@ -10,16 +10,33 @@ export class PiezaService {
   baseUrl = 'http://localhost:3000/api/backend';
   constructor(private http: HttpClient) {}
 
-  actualizarPieza(pieza: PiezaModel): Observable<any> {
-    let headers = new HttpHeaders();
-    headers = headers.set('Content-Type', 'application/json');
-    return this.http.post('/pieza/actualizar/', JSON.stringify(pieza), {
-      headers
-    });
+  update(pieza: PiezaModel, id: string): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.put(
+      this.baseUrl + '/pieza/actualizar/' + id,
+      JSON.stringify(pieza),
+      { headers: httpHeaders }
+    );
   }
 
   save(pieza: PiezaModel): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post(this.baseUrl + "/pieza", JSON.stringify(pieza), { headers: httpHeaders });
+    return this.http.post(this.baseUrl + '/pieza', JSON.stringify(pieza), {
+      headers: httpHeaders,
+    });
+  }
+
+  delete(id: string): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.delete(this.baseUrl + '/pieza/eliminar/' + id, {
+      headers: httpHeaders,
+    });
+  }
+
+  getId(id: number): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(this.baseUrl + '/pieza/buscarPorId/' + id, {
+      headers: httpHeaders,
+    });
   }
 }

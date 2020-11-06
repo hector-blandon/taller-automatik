@@ -1,29 +1,31 @@
 <div class="form">
 
     <div class="tab-content">
-        <h1>Actualizar piezas</h1>
+        <h1>Actualizar pieza</h1>
 
         <form action="/" method="post">
 
+            <div class="top-row">
+                <div class="field-wrap">
+                    <label title="nombre" for="">{{pieza.nombre}}</label>
+                </div>
+
+                <div class="field-wrap">
+                    <label title="código" for="">{{pieza.codigo}}</label>
+                </div>
+            </div>
+
+            <hr class="line">
+
             <div class="field-wrap">
-                <input type="text" class="form-control" placeholder="Código*" required #id/>
+                <input title="valor" type="number" class="form-control" required value={{pieza.valor}} #valor/>
             </div>
 
             <div class="field-wrap">
-                <input type="number" class="form-control" placeholder="Cantidad*" required #quantity/>
+                <input title="cantidad" type="number" class="form-control" required value={{pieza.cantidad}} required #cantidad/>
             </div>
 
-            <button title="Actualizar" type="button" class="button button-block">Actualizar</button>
-
-            <!-- (click)="actualizarPieza(id.value, quantity.value)" -->
-
-            <div *ngIf="show" class="alert alert-info" role="alert">
-                <label>#{{res}}</label>
-            </div>
-
-            <div *ngIf="empty" class="alert alert-warning" role="alert">
-                <label>No pueden haber secciones vacías</label>
-            </div>
+            <button title="Actualizar" type="button" class="button button-block" (click)="update(valor.value, cantidad.value)">Actualizar</button>
 
         </form>
 

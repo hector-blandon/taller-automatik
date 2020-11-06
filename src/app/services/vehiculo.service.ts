@@ -4,16 +4,27 @@ import { Observable } from 'rxjs';
 import { Vehiculo } from '../models/vehiculo.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VehiculoService {
+  baseUrl = 'http://localhost:3000/api/backend';
+  constructor(private http: HttpClient) {}
 
-  baseUrl:string = "http://localhost:3000/api/backend";
-  constructor(private http: HttpClient) { }
-
-
-  saveA(vehiculo: Vehiculo): Observable<any>{
+  save(vehiculo: Vehiculo): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post(this.baseUrl + "/vehiculos", JSON.stringify(vehiculo), { headers: httpHeaders });
+    return this.http.post(
+      this.baseUrl + '/vehiculos',
+      JSON.stringify(vehiculo),
+      {
+        headers: httpHeaders,
+      }
+    );
+  }
+
+  delete(id: string): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.delete(this.baseUrl + '/vehiculos/eliminar/' + id, {
+      headers: httpHeaders,
+    });
   }
 }

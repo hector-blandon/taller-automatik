@@ -13,29 +13,42 @@ export class AgregarVehiculoComponent implements OnInit {
   public marca: string;
   public color: string;
   public modelo: string;
-  constructor(public vehiculoService: VehiculoService) {}
+  public idcliente: string;
+  constructor(private vehiculoService: VehiculoService) {}
 
   ngOnInit(): void {}
-  saveA( matricula: string, marca: string, color: string, modelo: string){
 
-    if (matricula === '' || marca === '' || color === '' || modelo === '') {
+  save(
+    matricula: string,
+    marca: string,
+    color: string,
+    modelo: string,
+    idCliente: number
+  ) {
+    if (
+      matricula === '' ||
+      marca === '' ||
+      color === '' ||
+      modelo === '' ||
+      idCliente == null
+    ) {
       Swal.fire({
         icon: 'warning',
         title: 'debe diligenciar todos los campos!',
         showConfirmButton: true,
-        timer: 5000
-    });
-    } else {
-    const vehiculo: Vehiculo = {matricula , marca, color, modelo};
-    this.vehiculoService.saveA(vehiculo).subscribe((res: any) => {
-      Swal.fire({
-        icon: 'success',
-        title: res.mensaje,
-        showConfirmButton: true,
-        timer: 30000
+        timer: 5000,
       });
-      window.location.reload();
-    });
+    } else {
+      let vehiculo: Vehiculo = { matricula, marca, color, modelo, idCliente };
+      this.vehiculoService.save(vehiculo).subscribe((res: any) => {
+        Swal.fire({
+          icon: 'success',
+          title: res.mensaje,
+          showConfirmButton: true,
+          timer: 30000,
+        });
+        window.location.reload();
+      });
     }
   }
 }
