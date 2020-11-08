@@ -39,4 +39,11 @@ export class PiezaService {
       headers: httpHeaders,
     });
   }
+
+  getAll(idTaller: number): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(this.baseUrl + '/pieza/buscarPorTaller/' + idTaller, {
+      headers: httpHeaders,
+    });
+  }
 }

@@ -51,4 +51,11 @@ export class AdminService {
       headers: httpHeaders,
     });
   }
+
+  getAll(idTaller: number): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(this.baseUrl + '/administrador/buscarPorTaller/' + idTaller, {
+      headers: httpHeaders,
+    });
+  }
 }

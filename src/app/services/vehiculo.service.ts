@@ -27,4 +27,14 @@ export class VehiculoService {
       headers: httpHeaders,
     });
   }
+
+  getAll(idCliente: number): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(
+      this.baseUrl + '/vehiculos/buscarPorCliente/' + idCliente,
+      {
+        headers: httpHeaders,
+      }
+    );
+  }
 }

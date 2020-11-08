@@ -23,7 +23,7 @@ export class ActualizarMecanicoComponent implements OnInit {
   ngOnInit(): void {
     let id = 1;
     this.mecanicoService.getId(id).subscribe((res: any) => {
-      this.mecanico = res[0];
+      this.mecanico = res;
     });
   }
 

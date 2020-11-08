@@ -23,7 +23,7 @@ export class ActualizarAdminComponent implements OnInit {
   ngOnInit(): void {
     let id = 2;
     this.adminService.getId(id).subscribe((res: any) => {
-      this.admin = res[0];
+      this.admin = res;
     });
   }
 
