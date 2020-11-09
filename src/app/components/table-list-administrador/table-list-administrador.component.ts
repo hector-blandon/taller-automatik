@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { RegAdministradorComponent } from './reg-administrador.component';
 
 @Component({
   selector: 'app-table-list-administrador',
@@ -9,7 +11,8 @@ import { AdminService } from '../../services/admin.service';
 export class TableListAdministradorComponent implements OnInit {
 
   administradores = [];
-  constructor(private adminService: AdminService) { }
+  constructor(private adminService: AdminService,
+              public dialog: MatDialog) { }
 
   ngOnInit() {
 
@@ -19,6 +22,14 @@ export class TableListAdministradorComponent implements OnInit {
         this.administradores = resp;
       });
  
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(RegAdministradorComponent, {
+      width: '500px',
+      data: {}
+    });
+
   }
 
 }

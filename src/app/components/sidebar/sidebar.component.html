@@ -9,7 +9,7 @@
     <nav class="main-menu">
         <ul>
             <li>
-                <a href="">
+                <a [routerLink]="['/dashboard']">
                     <i class="fa fa-home fa-lg" style="color: white;" width="16" height="16"></i>
                     <!-- <span class="nav-text" style="color:white;" width="16" height="16">
                             Bienvenido Administrador
@@ -21,7 +21,7 @@
             <hr/>
 
             <li>
-                <a href="">
+                <a [routerLink]="['/administrador']">
                     <i class="fa fa-user fa-2x"></i>
                     <span class="nav-text">
                             Administradores
@@ -30,7 +30,7 @@
 
             </li>
             <li class="has-subnav">
-                <a href="#">
+                <a [routerLink]="['/clientes']">
                     <i class="fa fa-users fa-2x"></i>
                     <span class="nav-text">
                             Clientes
@@ -39,7 +39,7 @@
 
             </li>
             <li class="has-subnav">
-                <a href="#">
+                <a [routerLink]="['/mecanicos']">
                     <i class="fa fa-wrench fa-2x" aria-hidden="true"></i>
                     <span class="nav-text">
                             Mecánicos
@@ -48,7 +48,7 @@
 
             </li>
             <li class="has-subnav">
-                <a href="#">
+                <a [routerLink]="['/piezas']">
                     <i class="fa fa-cogs fa-2x"></i>
                     <span class="nav-text">
                             Piezas
@@ -57,7 +57,7 @@
 
             </li>
             <li>
-                <a href="#">
+                <a [routerLink]="['/vehiculos']">
                     <i class="fa fa-car fa-2x"></i>
                     <span class="nav-text">
                             Vehículos
@@ -65,7 +65,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a [routerLink]="['/fabricantes']">
                     <i class="fa fa-font fa-2x"></i>
                     <span class="nav-text">
                            Fabricantes
@@ -73,7 +73,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a [routerLink]="['/facturas']">
                     <i class="fa fa-table fa-2x"></i>
                     <span class="nav-text">
                             Facturas

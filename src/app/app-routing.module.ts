@@ -11,6 +11,11 @@ import {LoginComponent} from './pages/login/login.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import { RegistrarMecanicoComponent } from './components/registrar-mecanico/registrar-mecanico.component';
 import { GenerarFacturaComponent } from './components/generar-factura/generar-factura.component';
+import { TableListAdministradorComponent } from './components/table-list-administrador/table-list-administrador.component';
+import { TableListClienteComponent } from './components/table-list-cliente/table-list-cliente.component';
+import { TableListMecanicoComponent } from './components/table-list-mecanico/table-list-mecanico.component';
+import { TableListPiezaComponent } from './components/table-list-pieza/table-list-pieza.component';
+import { TableListVehiculoComponent } from './components/table-list-vehiculo/table-list-vehiculo.component';
 const APP_ROUTES: Routes = [
 
   { path: 'home', component: HomeComponent },
@@ -23,7 +28,16 @@ const APP_ROUTES: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent},
   { path: 'factura', component: GenerarFacturaComponent},
+  
+  { path: 'administrador', component: TableListAdministradorComponent},
+  { path: 'clientes', component: TableListClienteComponent},
+  { path: 'mecanicos', component: TableListMecanicoComponent},
+  { path: 'clientes', component: TableListClienteComponent},
+  { path: 'piezas', component: TableListPiezaComponent},
+  { path: 'vehiculos', component: TableListVehiculoComponent},
+  
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
+
 
 ];
 

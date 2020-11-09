@@ -35,6 +35,8 @@ import { TableListClienteComponent } from './components/table-list-cliente/table
 import { TableListMecanicoComponent } from './components/table-list-mecanico/table-list-mecanico.component';
 import { TableListPiezaComponent } from './components/table-list-pieza/table-list-pieza.component';
 import { TableListVehiculoComponent } from './components/table-list-vehiculo/table-list-vehiculo.component';
+import { RegAdministradorComponent } from './components/table-list-administrador/reg-administrador.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { TableListVehiculoComponent } from './components/table-list-vehiculo/tab
     TableListMecanicoComponent,
     TableListPiezaComponent,
     TableListVehiculoComponent,
+    RegAdministradorComponent
   ],
   imports: [
     BrowserModule,
@@ -75,8 +78,12 @@ import { TableListVehiculoComponent } from './components/table-list-vehiculo/tab
     BrowserAnimationsModule,
     NgbModule,
     HttpClientModule,
+    MatDialogModule
   ],
-  exports: [MatSidenavModule],
+  exports: [
+    MatSidenavModule,
+    MatDialogModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
