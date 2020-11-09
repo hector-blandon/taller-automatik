@@ -55,15 +55,12 @@ export class AdminService {
 
   getAdministradores(): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.get(
-      this.baseUrl + '/administrador/buscarAdministradores/',
-      {
-        headers: httpHeaders,
-      }
-    );
-    // .pipe(
-    //   map(resp => this.crearArreglo)
-    // );
+    return this.http.get(this.baseUrl + '/administrador/buscarAdministradores/', {
+      headers: httpHeaders,
+    });
+      // .pipe(
+      //   map(resp => this.crearArreglo)
+      // );
   }
 
   private crearArreglo(administradoresObj: object) {
@@ -75,11 +72,8 @@ export class AdminService {
 
   getAll(idTaller: number): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.get(
-      this.baseUrl + '/administrador/buscarPorTaller/' + idTaller,
-      {
-        headers: httpHeaders,
-      }
-    );
+    return this.http.get(this.baseUrl + '/administrador/buscarPorTaller/' + idTaller, {
+      headers: httpHeaders,
+    });
   }
 }
