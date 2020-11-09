@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Admin } from '../models/adminModel';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AdminService {
   baseUrl = 'http://localhost:3000/api/backend';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   saveA(admin: Admin): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -50,5 +51,22 @@ export class AdminService {
     return this.http.get(this.baseUrl + '/administrador/buscarPorId/' + id, {
       headers: httpHeaders,
     });
+  }
+
+  getAdministradores(): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(this.baseUrl + '/administrador/buscarAdministradores/', {
+      headers: httpHeaders,
+    });
+      // .pipe(
+      //   map(resp => this.crearArreglo)
+      // );
+  }
+
+  private crearArreglo(administradoresObj: object) {
+    const administradores: Admin[] = [];
+
+    console.log(administradores);
+    return 'Hola Mundo';
   }
 }

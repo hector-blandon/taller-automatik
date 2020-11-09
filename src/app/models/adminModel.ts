@@ -5,5 +5,5 @@ export class Admin {
         public nit: string = null,
         public correo: string = null,
         public contrasenia: string = null,
-        public telefono : string = null ) {}
+        public telefono: string = null ) {}
 }
