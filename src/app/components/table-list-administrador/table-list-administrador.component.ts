@@ -9,14 +9,14 @@ import { RegAdministradorComponent } from './reg-administrador.component';
   styleUrls: ['./table-list-administrador.component.css']
 })
 export class TableListAdministradorComponent implements OnInit {
-
+public idTaller = 1;
   administradores = [];
   constructor(private adminService: AdminService,
               public dialog: MatDialog) { }
 
   ngOnInit() {
 
-    this.adminService.getAdministradores()
+    this.adminService.getAll(this.idTaller)
       .subscribe( resp => {
         console.log(resp),
         this.administradores = resp;

@@ -7,12 +7,12 @@ import { VehiculoService } from '../../services/vehiculo.service';
   styleUrls: ['./table-list-vehiculo.component.css']
 })
 export class TableListVehiculoComponent implements OnInit {
-
+public idTaller = 0;
   vehiculos = [];
   constructor(private vehiculoService: VehiculoService) { }
 
   ngOnInit() {
-    this.vehiculoService.getVehiculos()
+    this.vehiculoService.getAll(this.idTaller)
       .subscribe( resp => {
         console.log(resp),
         this.vehiculos = resp;

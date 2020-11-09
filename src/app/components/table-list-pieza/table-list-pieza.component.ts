@@ -7,12 +7,12 @@ import { PiezaService } from '../../services/pieza.service';
   styleUrls: ['./table-list-pieza.component.css']
 })
 export class TableListPiezaComponent implements OnInit {
-
+public idTaller = 1;
   piezas = [];
   constructor(private piezaService: PiezaService) { }
 
   ngOnInit() {
-    this.piezaService.getPiezas()
+    this.piezaService.getAll(this.idTaller)
       .subscribe( resp => {
         console.log(resp),
         this.piezas = resp;

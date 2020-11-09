@@ -7,13 +7,13 @@ import { ClienteService } from '../../services/clienteService';
   styleUrls: ['./table-list-cliente.component.css']
 })
 export class TableListClienteComponent implements OnInit {
-
+public idTaller = 1;
   clientes = [];
   constructor(private clienteService: ClienteService) { }
 
   ngOnInit() {
 
-    this.clienteService.getClientes()
+    this.clienteService.getAll(this.idTaller)
       .subscribe( resp => {
         console.log(resp),
         this.clientes = resp;
