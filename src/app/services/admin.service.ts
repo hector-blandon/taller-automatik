@@ -58,16 +58,6 @@ export class AdminService {
     return this.http.get(this.baseUrl + '/administrador/buscarAdministradores/', {
       headers: httpHeaders,
     });
-      // .pipe(
-      //   map(resp => this.crearArreglo)
-      // );
-  }
-
-  private crearArreglo(administradoresObj: object) {
-    const administradores: Admin[] = [];
-
-    console.log(administradores);
-    return 'Hola Mundo';
   }
 
   getAll(idTaller: number): Observable<any> {

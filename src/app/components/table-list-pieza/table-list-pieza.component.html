@@ -12,7 +12,7 @@
 
                                 <h2 class="card-title text-center">
                                     <a>
-                                        <span class="nav-text">Administradores</span>
+                                        <span class="nav-text">Piezas</span>
                                     </a>
                                 </h2>
                             </div>
@@ -36,33 +36,25 @@
                                         ID
                                     </th>
                                     <th>
-                                        Nombres
+                                        Nombre
                                     </th>
                                     <th>
-                                        Apellidos
+                                        Cantidad
                                     </th>
                                     <th>
-                                        Nit
-                                    </th>
-                                    <th>
-                                        Teléfono
-                                    </th>
-                                    <th>
-                                        Correo
+                                        Valor
                                     </th>
                                     <th>
                                         Opciones
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let admins of administradores; let i = index">
+                                    <tr *ngFor="let pieza of piezas; let i = index">
                                         <th scope="row">{{ i + 1 }}</th>
-                                        <td>{{ admins.nombre}}</td>
-                                        <td>{{ admins.nombre}}</td>
-                                        <td>{{ admins.apellido}}</td>
-                                        <td>{{ admins.nit}}</td>
-                                        <td>{{ admins.telefono}}</td>
-                                        <td>{{ admins.correo}}</td>
+
+                                        <td>{{ pieza.nombre}}</td>
+                                        <td>{{ pieza.cantidad}}</td>
+                                        <td>{{ pieza.valor}}</td>
 
                                         <td>
                                             <a class="btn btn-primary btn-round text-white"><i class="fa fa-pencil" style="font-size:15px"></i></a>

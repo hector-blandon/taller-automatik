@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ViewChild, TemplateRef} from '@angular/core';
 
 @Component({
   selector: 'app-table-list-administrador',
@@ -11,9 +9,7 @@ import { ViewChild, TemplateRef} from '@angular/core';
 export class TableListAdministradorComponent implements OnInit {
 
   administradores = [];
-  constructor(private adminService: AdminService, private modalService: NgbModal) { }
-
-  @ViewChild("modalAgregarAdministrador", {static: false}) modalAgregarAdministrador: TemplateRef<any>;
+  constructor(private adminService: AdminService) { }
 
   ngOnInit() {
 

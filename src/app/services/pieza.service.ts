@@ -8,7 +8,7 @@ import { PiezaModel } from '../models/piezaModel';
 })
 export class PiezaService {
   baseUrl = 'http://localhost:3000/api/backend';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   update(pieza: PiezaModel, id: string): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -43,7 +43,13 @@ export class PiezaService {
   getAll(idTaller: number): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.get(this.baseUrl + '/pieza/buscarPorTaller/' + idTaller, {
-      headers: httpHeaders,
     });
   }
+
+  getPiezas(): Observable < any > {
+      const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+      return this.http.get(this.baseUrl + '/pieza/buscarPiezas/', {
+        headers: httpHeaders,
+      });
+    }
 }

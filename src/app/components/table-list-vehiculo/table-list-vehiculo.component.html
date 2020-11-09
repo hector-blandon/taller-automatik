@@ -12,7 +12,7 @@
 
                                 <h2 class="card-title text-center">
                                     <a>
-                                        <span class="nav-text">Administradores</span>
+                                        <span class="nav-text">Vehículos</span>
                                     </a>
                                 </h2>
                             </div>
@@ -36,33 +36,28 @@
                                         ID
                                     </th>
                                     <th>
-                                        Nombres
+                                        Matricula
                                     </th>
                                     <th>
-                                        Apellidos
+                                        Marca
                                     </th>
                                     <th>
-                                        Nit
+                                        Color
                                     </th>
                                     <th>
-                                        Teléfono
-                                    </th>
-                                    <th>
-                                        Correo
+                                        Modelo
                                     </th>
                                     <th>
                                         Opciones
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let admins of administradores; let i = index">
+                                    <tr *ngFor="let vehiculo of vehiculos; let i = index">
                                         <th scope="row">{{ i + 1 }}</th>
-                                        <td>{{ admins.nombre}}</td>
-                                        <td>{{ admins.nombre}}</td>
-                                        <td>{{ admins.apellido}}</td>
-                                        <td>{{ admins.nit}}</td>
-                                        <td>{{ admins.telefono}}</td>
-                                        <td>{{ admins.correo}}</td>
+                                        <td>{{ vehiculo.matricula}}</td>
+                                        <td>{{ vehiculo.marca}}</td>
+                                        <td>{{ vehiculo.color}}</td>
+                                        <td>{{ vehiculo.modelo}}</td>
 
                                         <td>
                                             <a class="btn btn-primary btn-round text-white"><i class="fa fa-pencil" style="font-size:15px"></i></a>

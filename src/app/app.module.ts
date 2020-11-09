@@ -31,6 +31,10 @@ import { TableListAdministradorComponent } from './components/table-list-adminis
 import { ActualizarAdminComponent } from './components/actualizar-admin/actualizar-admin.component';
 import { ActualizarClienteComponent } from './components/actualizar-cliente/actualizar-cliente.component';
 import { ActualizarMecanicoComponent } from './components/actualizar-mecanico/actualizar-mecanico.component';
+import { TableListClienteComponent } from './components/table-list-cliente/table-list-cliente.component';
+import { TableListMecanicoComponent } from './components/table-list-mecanico/table-list-mecanico.component';
+import { TableListPiezaComponent } from './components/table-list-pieza/table-list-pieza.component';
+import { TableListVehiculoComponent } from './components/table-list-vehiculo/table-list-vehiculo.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +58,10 @@ import { ActualizarMecanicoComponent } from './components/actualizar-mecanico/ac
     ActualizarAdminComponent,
     ActualizarClienteComponent,
     ActualizarMecanicoComponent,
+    TableListClienteComponent,
+    TableListMecanicoComponent,
+    TableListPiezaComponent,
+    TableListVehiculoComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@
 
                                 <h2 class="card-title text-center">
                                     <a>
-                                        <span class="nav-text">Administradores</span>
+                                        <span class="nav-text">Clientes</span>
                                     </a>
                                 </h2>
                             </div>
@@ -45,24 +45,28 @@
                                         Nit
                                     </th>
                                     <th>
-                                        Teléfono
+                                        Correo
                                     </th>
                                     <th>
-                                        Correo
+                                        Dirección
+                                    </th>
+                                    <th>
+                                        Teléfono
                                     </th>
                                     <th>
                                         Opciones
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let admins of administradores; let i = index">
+                                    <tr *ngFor="let cliente of clientes; let i = index">
                                         <th scope="row">{{ i + 1 }}</th>
-                                        <td>{{ admins.nombre}}</td>
-                                        <td>{{ admins.nombre}}</td>
-                                        <td>{{ admins.apellido}}</td>
-                                        <td>{{ admins.nit}}</td>
-                                        <td>{{ admins.telefono}}</td>
-                                        <td>{{ admins.correo}}</td>
+
+                                        <td>{{ cliente.nombre}}</td>
+                                        <td>{{ cliente.apellido}}</td>
+                                        <td>{{ cliente.nit}}</td>
+                                        <td>{{ cliente.correo}}</td>
+                                        <td>{{ cliente.direccion}}</td>
+                                        <td>{{ cliente.telefono}}</td>
 
                                         <td>
                                             <a class="btn btn-primary btn-round text-white"><i class="fa fa-pencil" style="font-size:15px"></i></a>

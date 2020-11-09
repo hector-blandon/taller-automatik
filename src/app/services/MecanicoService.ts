@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class MecanicoService {
   baseUrl = 'http://localhost:3000/api/backend';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   save(mecanico: MecanicoModel): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -50,5 +50,13 @@ export class MecanicoService {
         headers: httpHeaders,
       }
     );
+  }
+
+  getMecanicos(): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(this.baseUrl + '/mecanicos/buscarMecanicos/', {
+      headers: httpHeaders,
+    });
+
   }
 }

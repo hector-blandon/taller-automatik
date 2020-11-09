@@ -49,4 +49,11 @@ export class ClienteService {
       }
     );
   }
+
+  getClientes(): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(this.baseUrl + '/clientes/buscarClientes/', {
+      headers: httpHeaders,
+    });
+  }
 }
