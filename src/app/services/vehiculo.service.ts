@@ -8,7 +8,7 @@ import { Vehiculo } from '../models/vehiculo.model';
 })
 export class VehiculoService {
   baseUrl = 'http://localhost:3000/api/backend';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   save(vehiculo: Vehiculo): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -36,5 +36,12 @@ export class VehiculoService {
         headers: httpHeaders,
       }
     );
+  }
+
+  getVehiculos(): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(this.baseUrl + '/vehiculos/buscarVehiculos/', {
+      headers: httpHeaders,
+    });
   }
 }

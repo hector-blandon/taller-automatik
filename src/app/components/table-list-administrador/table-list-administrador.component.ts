@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ViewChild, TemplateRef} from '@angular/core';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { RegAdministradorComponent } from './reg-administrador.component';
 
 @Component({
   selector: 'app-table-list-administrador',
@@ -11,9 +11,8 @@ import { ViewChild, TemplateRef} from '@angular/core';
 export class TableListAdministradorComponent implements OnInit {
 
   administradores = [];
-  constructor(private adminService: AdminService, private modalService: NgbModal) { }
-
-  @ViewChild("modalAgregarAdministrador", {static: false}) modalAgregarAdministrador: TemplateRef<any>;
+  constructor(private adminService: AdminService,
+              public dialog: MatDialog) { }
 
   ngOnInit() {
 
@@ -23,6 +22,14 @@ export class TableListAdministradorComponent implements OnInit {
         this.administradores = resp;
       });
  
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(RegAdministradorComponent, {
+      width: '500px',
+      data: {}
+    });
+
   }
 
 }
