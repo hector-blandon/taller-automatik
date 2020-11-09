@@ -7,13 +7,13 @@ import { MecanicoService } from '../../services/MecanicoService';
   styleUrls: ['./table-list-mecanico.component.css']
 })
 export class TableListMecanicoComponent implements OnInit {
-
+public idTaller =1;
   mecanicos = [];
   constructor(private mecanicoService: MecanicoService) { }
 
   ngOnInit() {
 
-    this.mecanicoService.getMecanicos()
+    this.mecanicoService.getAll(this.idTaller)
       .subscribe( resp => {
         console.log(resp),
         this.mecanicos = resp;
