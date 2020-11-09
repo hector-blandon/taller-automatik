@@ -21,7 +21,7 @@ export class ActualizarPiezaComponent implements OnInit {
   ngOnInit(): void {
     let id = 3;
     this.piezaService.getId(id).subscribe((res: any) => {
-      this.pieza = res[0];
+      this.pieza = res;
     });
   }
 

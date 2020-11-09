@@ -39,4 +39,14 @@ export class ClienteService {
       headers: httpHeaders,
     });
   }
+
+  getAll(idTaller: number): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(
+      this.baseUrl + '/clientes/buscarPorTaller/' + idTaller,
+      {
+        headers: httpHeaders,
+      }
+    );
+  }
 }

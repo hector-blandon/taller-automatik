@@ -13,7 +13,7 @@ export class AdminService {
   constructor(private http: HttpClient) { }
 
   saveA(admin: Admin): Observable<any> {
-    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' }); 
     return this.http.post(
       this.baseUrl + '/administrador',
       JSON.stringify(admin),
@@ -52,7 +52,6 @@ export class AdminService {
       headers: httpHeaders,
     });
   }
-
   getAdministradores(): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.get(this.baseUrl + '/administrador/buscarAdministradores/', {
@@ -68,5 +67,12 @@ export class AdminService {
 
     console.log(administradores);
     return 'Hola Mundo';
+  }
+
+  getAll(idTaller: number): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(this.baseUrl + '/administrador/buscarPorTaller/' + idTaller, {
+      headers: httpHeaders,
+    });
   }
 }
