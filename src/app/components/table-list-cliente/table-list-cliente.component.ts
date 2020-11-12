@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../../services/clienteService';
+import { RegClienteComponent } from './reg-cliente.component';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-table-list-cliente',
@@ -9,7 +11,8 @@ import { ClienteService } from '../../services/clienteService';
 export class TableListClienteComponent implements OnInit {
 public idTaller = 1;
   clientes = [];
-  constructor(private clienteService: ClienteService) { }
+  constructor(private clienteService: ClienteService,
+              public dialog: MatDialog) { }
 
   ngOnInit() {
 
@@ -20,4 +23,11 @@ public idTaller = 1;
       });
   }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(RegClienteComponent, {
+      width: '500px',
+      data: {}
+    });
+
+  }
 }

@@ -4,9 +4,10 @@ export class ClienteModel{
 
     nombre: string;
     apellido: string;
-    correo: string;
-    direccion: string;
     nit: string;
+    correo: string;
     telefono: string;
-
+    direccion: string;
+    contrasenia: string
+    
 }

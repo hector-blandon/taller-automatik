@@ -37,6 +37,9 @@ import { TableListPiezaComponent } from './components/table-list-pieza/table-lis
 import { TableListVehiculoComponent } from './components/table-list-vehiculo/table-list-vehiculo.component';
 import { RegAdministradorComponent } from './components/table-list-administrador/reg-administrador.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { RegClienteComponent } from './components/table-list-cliente/reg-cliente.component';
+import { RegMecanicoComponent } from './components/table-list-mecanico/reg-mecanico.component';
+import { RegVehiculoComponent } from './components/table-list-vehiculo/reg-vehiculo.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +67,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     TableListMecanicoComponent,
     TableListPiezaComponent,
     TableListVehiculoComponent,
-    RegAdministradorComponent
+    RegAdministradorComponent,
+    RegClienteComponent,
+    RegMecanicoComponent,
+    RegVehiculoComponent
   ],
   imports: [
     BrowserModule,
