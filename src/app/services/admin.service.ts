@@ -30,6 +30,27 @@ export class AdminService {
     );
   }
 
+  resetPassword(credenciales: any): Observable<any> {
+    console.log('llega a service');
+    
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(
+      this.baseUrl + '/resetPassword',
+      JSON.stringify(credenciales),
+      { headers: httpHeaders }
+    );
+  }
+  cambiarPassword(credenciales: any): Observable<any> {
+    console.log('llega a service');
+    
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(
+      this.baseUrl + '/cambiarPassword',
+      JSON.stringify(credenciales),
+      { headers: httpHeaders }
+    );
+  }
+
   delete(id: string): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.delete(this.baseUrl + '/administrador/eliminar/' + id, {

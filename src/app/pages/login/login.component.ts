@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EmailValidator } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { AdminService } from '../../services/admin.service';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {RecuperacionContraseniaComponent} from './recuperacion-contrasenia.component';
 import { Router } from '@angular/router'
 
 @Component({
@@ -11,7 +13,7 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private adminService: AdminService,private router: Router) { }
+  constructor(private adminService: AdminService,private router: Router, public dialog: MatDialog) { }
 login(correo : string, contrasenia:string){
   if ( correo == '' || contrasenia == '') {
     Swal.fire({
@@ -32,8 +34,12 @@ login(correo : string, contrasenia:string){
           showConfirmButton: true,
           timer: 30000
         });
-        this.delay(3000);
-        this.router.navigate(['/dashboard']);
+        this.delay(3000);  
+        console.log('idadmin');
+        console.log(res.resp.idAdmin);
+        
+        
+        this.router.navigate(['/dashboard/'+ `${res.resp.idAdmin}`]);
 
       }
       else{
@@ -56,7 +62,14 @@ login(correo : string, contrasenia:string){
 async delay(ms: number) {
   return new Promise( resolve => setTimeout(resolve, ms) );
 }
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(RecuperacionContraseniaComponent, {
+      width: '500px',
+      data: {}
+    });
+
   }
   
 
