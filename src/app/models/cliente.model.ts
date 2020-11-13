@@ -8,6 +8,4 @@ export class ClienteModel{
     correo: string;
     telefono: string;
     direccion: string;
-    contrasenia: string
-    
 }

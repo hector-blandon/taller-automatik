@@ -16,24 +16,23 @@ export class RegClienteComponent implements OnInit {
   public correo: string;
   public telefono: string;
   public direccion: string;
-  public contrasenia: string;
 
   constructor(private clienteService: ClienteService) { }
 
-  saveA(nombre: string, apellido: string, nit: string, correo: string, telefono: string, direccion: string, contrasenia: string) {
+  save(nombre: string, apellido: string, correo: string, direccion: string, nit: string, telefono: string) {
 
-    if (nombre == '' || apellido == '' || nit == '' || correo == '' || telefono == '' || direccion == ''|| contrasenia == '') {
+    if (nombre == '' || apellido == '' || correo == '' || direccion == '' || nit == '' || telefono == '') {
       Swal.fire({
         icon: 'warning',
         title: 'debe diligenciar todos los campos!',
         showConfirmButton: true,
         timer: 5000
-
       });
+
     } else {
 
-      let cliente: ClienteModel = { nombre, apellido, nit, correo, telefono, direccion, contrasenia };
-      this.clienteService.saveA(client).subscribe((res: any) => {
+      let cliente: ClienteModel = { nombre, apellido, correo, direccion, nit, telefono };
+      this.clienteService.saveA(cliente).subscribe((res: any) => {
         Swal.fire({
           icon: 'success',
           title: res.mensaje,
