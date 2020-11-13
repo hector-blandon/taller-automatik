@@ -22100,6 +22100,10 @@ label {
     text-align: center;
 }
 
+.section {
+    position: relative;
+}
+
 .card .card-actions .card-header {
     padding: 0;
     min-height: 160px;

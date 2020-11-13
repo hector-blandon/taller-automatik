@@ -18,7 +18,7 @@ const APP_ROUTES: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'vehiculo', component: AgregarVehiculoComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'dashboard/:idAdmin', component: DashboardComponent},
   { path: 'factura', component: GenerarFacturaComponent},
   
   { path: 'administrador', component: TableListAdministradorComponent},

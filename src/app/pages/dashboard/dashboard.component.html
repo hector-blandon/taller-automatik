@@ -1,8 +1,31 @@
 <section>
     <div class="container">
+        <div class="col-md-8">
+            <div class="card-header card-header-danger">
+                <h1 class="card-title">Bienvenido Administrador</h1>
+            </div>
+            <div class="card-body text-center">
+                <div class="card-text">
+                    <h3 style="text-align: left;"><b>Nombre : </b><span style="font-size:30px;">{{this.nombre}}</span></h3>
+                    <h3 style="text-align: left;"><b>Apellido : </b><span style="font-size:30px;">{{this.apellido}}</span></h3>
+                    <h3 style="text-align: left;"><b>Correo :</b> <span style="font-size:30px;">{{this.correo}}</span></h3>
+                    <h3 style="text-align: left;"><b>Telefono : </b><span style="font-size:30px;">{{this.telefono}}</span></h3>
+                </div>
+                <a href="#" class="btn btn-success">
+                    <i class="fa fa-pencil-square-o fa-2x"></i> Modificar Datos
+                </a>
+                <a (click)="openDialog()" class="btn btn-danger">
+                    <i class="fa fa-key fa-2x"></i> Modificar Contraseña
+                </a>
 
+            </div>
+        </div>
     </div>
+
 </section>
+
+
+
 
 <app-sidebar></app-sidebar>
 

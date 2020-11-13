@@ -36,6 +36,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RegClienteComponent } from './components/table-list-cliente/reg-cliente.component';
 import { RegMecanicoComponent } from './components/table-list-mecanico/reg-mecanico.component';
 import { RegVehiculoComponent } from './components/table-list-vehiculo/reg-vehiculo.component';
+import { RecuperacionContraseniaComponent } from './pages/login/recuperacion-contrasenia.component';
+import { CambioPasswordComponent } from './pages/login/cambio-password.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { RegVehiculoComponent } from './components/table-list-vehiculo/reg-vehic
     RegAdministradorComponent,
     RegClienteComponent,
     RegMecanicoComponent,
-    RegVehiculoComponent
+    RegVehiculoComponent,
+    RecuperacionContraseniaComponent,
+    CambioPasswordComponent
   ],
   imports: [
     BrowserModule,
