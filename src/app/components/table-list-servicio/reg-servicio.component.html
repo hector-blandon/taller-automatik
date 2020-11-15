@@ -1,0 +1,26 @@
+<div class="form">
+
+    <div class="tab-content">
+        <h1>Crear Servicio</h1>
+
+        <form action="/">
+
+            <div class="field-wrap">
+                <input type="date" required autocomplete="off" placeholder="Fecha Ingreso" #fechaIngreso>
+            </div>
+
+            <div class="field-wrap">
+                <input type="number" required autocomplete="off" placeholder="Kilometraje" #kilometraje>
+            </div>
+
+            <div class="field-wrap">
+                <input type="text" required autocomplete="off" placeholder="Falla" #falla>
+            </div>
+
+            <button type="submit" (click)="save(fechaIngreso.value, kilometraje.value, falla.value)" class="button button-block">Crear</button>
+
+        </form>
+
+    </div>
+
+</div>

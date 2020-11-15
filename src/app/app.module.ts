@@ -38,6 +38,8 @@ import { RegMecanicoComponent } from './components/table-list-mecanico/reg-mecan
 import { RegVehiculoComponent } from './components/table-list-vehiculo/reg-vehiculo.component';
 import { RecuperacionContraseniaComponent } from './pages/login/recuperacion-contrasenia.component';
 import { CambioPasswordComponent } from './pages/login/cambio-password.component';
+import { TableListServicioComponent } from './components/table-list-servicio/table-list-servicio.component';
+import { RegServicioComponent } from './components/table-list-servicio/reg-servicio.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,9 @@ import { CambioPasswordComponent } from './pages/login/cambio-password.component
     RegMecanicoComponent,
     RegVehiculoComponent,
     RecuperacionContraseniaComponent,
-    CambioPasswordComponent
+    CambioPasswordComponent,
+    TableListServicioComponent,
+    RegServicioComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,12 +84,9 @@ import { CambioPasswordComponent } from './pages/login/cambio-password.component
     BrowserAnimationsModule,
     NgbModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
   ],
-  exports: [
-    MatSidenavModule,
-    MatDialogModule
-  ],
+  exports: [MatSidenavModule, MatDialogModule],
   providers: [],
   bootstrap: [AppComponent],
 })
