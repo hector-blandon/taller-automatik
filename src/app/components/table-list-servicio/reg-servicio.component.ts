@@ -22,7 +22,13 @@ export class RegServicioComponent implements OnInit {
         timer: 30000,
       });
     } else {
-      const servicio: ServicioModel = { fechaIngreso, kilometraje, falla };
+      const status = true;
+      const servicio: ServicioModel = {
+        fechaIngreso,
+        kilometraje,
+        falla,
+        status,
+      };
       this.servicioService.save(servicio).subscribe((res: any) => {
         Swal.fire({
           icon: 'success',

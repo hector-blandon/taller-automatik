@@ -13,6 +13,7 @@ import { TableListMecanicoComponent } from './components/table-list-mecanico/tab
 import { TableListPiezaComponent } from './components/table-list-pieza/table-list-pieza.component';
 import { TableListVehiculoComponent } from './components/table-list-vehiculo/table-list-vehiculo.component';
 import { TableListServicioComponent } from './components/table-list-servicio/table-list-servicio.component';
+import { TableListServicioSidebarComponent } from './components/table-list-servicio-sidebar/table-list-servicio-sidebar.component';
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'navbar', component: NavbarComponent },
@@ -27,7 +28,11 @@ const APP_ROUTES: Routes = [
   { path: 'clientes', component: TableListClienteComponent },
   { path: 'piezas', component: TableListPiezaComponent },
   { path: 'vehiculos', component: TableListVehiculoComponent },
-  { path: 'servicios', component: TableListServicioComponent },
+  {
+    path: 'serviciosVehiculo/:idVehiculo',
+    component: TableListServicioComponent,
+  },
+  { path: 'serviciosTaller', component: TableListServicioSidebarComponent },
 
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

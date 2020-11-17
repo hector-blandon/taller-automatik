@@ -21,15 +21,6 @@
                                         </a>
                                     </h2>
                                 </div>
-
-                                <div class="col-md-2">
-                                    <button mat-raised-button (click)="openDialog()" class="btn btn-round btn-lg pull-right" style="background-color: black;">
-                                        <a >
-                                            <i class="fa fa-plus fa-2x text-white"></i>
-                                        </a>
-                                    </button>
-                                </div>
-
                             </div>
 
                         </div>
@@ -44,16 +35,10 @@
                                             Fecha Ingreso
                                         </th>
                                         <th>
-                                            Fecha Salida
-                                        </th>
-                                        <th>
                                             Kilometraje
                                         </th>
                                         <th>
                                             Falla
-                                        </th>
-                                        <th>
-                                            Status
                                         </th>
                                         <th>
                                             Opciones
@@ -64,14 +49,12 @@
                                             <th scope="row">{{ i + 1 }}</th>
 
                                             <td>{{ servicio.fechaIngreso }}</td>
-                                            <td>{{ servicio.fechaSalida }}</td>
                                             <td>{{ servicio.kilometraje }}</td>
                                             <td>{{ servicio.falla }}</td>
-                                            <td>{{ servicio.status }}</td>
 
                                             <td>
-                                                <a class="btn btn-primary btn-round text-white" (click)="update(servicio.idServicio)"><i class="fa fa-pencil-square-o" style="font-size:15px"></i></a>
-                                                <a class="btn btn-danger btn-round text-white" *ngIf="servicio.status" (click)="archive(servicio.idServicio)"><i class="fa fa-archive" style="font-size:15px" aria-hidden="true"></i></a>
+                                                <a class="btn btn-primary btn-round text-white"><i class="fa fa-pencil-square-o" style="font-size:15px"></i></a>
+                                                <a class="btn btn-danger btn-round text-white"><i class="fa fa-archive" style="font-size:15px" aria-hidden="true"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>

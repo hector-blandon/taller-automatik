@@ -40,6 +40,7 @@ import { RecuperacionContraseniaComponent } from './pages/login/recuperacion-con
 import { CambioPasswordComponent } from './pages/login/cambio-password.component';
 import { TableListServicioComponent } from './components/table-list-servicio/table-list-servicio.component';
 import { RegServicioComponent } from './components/table-list-servicio/reg-servicio.component';
+import { TableListServicioSidebarComponent } from './components/table-list-servicio-sidebar/table-list-servicio-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { RegServicioComponent } from './components/table-list-servicio/reg-servi
     CambioPasswordComponent,
     TableListServicioComponent,
     RegServicioComponent,
+    TableListServicioSidebarComponent,
   ],
   imports: [
     BrowserModule,

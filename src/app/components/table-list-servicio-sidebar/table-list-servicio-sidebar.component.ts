@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../services/servicio.service';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
-import { RegServicioComponent } from './reg-servicio.component';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-table-list-servicio',
-  templateUrl: './table-list-servicio.component.html',
-  styleUrls: ['./table-list-servicio.component.css'],
+  selector: 'app-table-list-servicio-sidebar',
+  templateUrl: './table-list-servicio-sidebar.component.html',
+  styleUrls: ['./table-list-servicio-sidebar.component.css'],
 })
-export class TableListServicioComponent implements OnInit {
+export class TableListServicioSidebarComponent implements OnInit {
+  public idTaller = 1;
   servicios = [];
 
   constructor(
@@ -18,16 +18,8 @@ export class TableListServicioComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let idVehiculo = 1;
-    this.servicioService.getAllV(idVehiculo).subscribe((resp) => {
+    this.servicioService.getAllT(this.idTaller).subscribe((resp) => {
       console.log(resp), (this.servicios = resp);
-    });
-  }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(RegServicioComponent, {
-      width: '500px',
-      data: {},
     });
   }
 
