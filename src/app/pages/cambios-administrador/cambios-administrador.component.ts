@@ -1,15 +1,14 @@
-import { Component, OnInit,Inject } from '@angular/core';
-import { ClienteService } from '../../services/clienteService';
-import { ClienteModel } from '../../models/cliente.model';
-import {MatDialog, MatDialogRef,MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {AdminService} from 'src/app/services/admin.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-actualizar-cliente',
-  templateUrl: './actualizar-cliente.component.html',
-  styleUrls: ['./actualizar-cliente.component.css'],
+  selector: 'app-cambios-administrador',
+  templateUrl: './cambios-administrador.component.html',
+  styleUrls: ['./cambios-administrador.component.css']
 })
-export class ActualizarClienteComponent implements OnInit {
+export class CambiosAdministradorComponent implements OnInit {
 
   nombre:string = '';
   apellido:string = '';
@@ -17,8 +16,10 @@ export class ActualizarClienteComponent implements OnInit {
   correo : string ='';
   id : number;
 
-  constructor(private clienteService: ClienteService, public dialogRef: MatDialogRef<ActualizarClienteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) {}
+  constructor(private adminService : AdminService, public dialogRef: MatDialogRef<CambiosAdministradorComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+    
+  }
 
   ngOnInit(): void {
     this.traerDatos();
@@ -26,9 +27,9 @@ export class ActualizarClienteComponent implements OnInit {
 
   traerDatos(){
 
-    this.id = this.data.idCliente;
+    this.id = this.data.idAdmin;
     console.log('data',this.id);
-    this.clienteService.getId(this.id).subscribe(
+    this.adminService.getId(this.id).subscribe(
       (result : any)=>{
         console.log('entra al result',result),
         this.nombre = result.nombre,
@@ -45,7 +46,7 @@ export class ActualizarClienteComponent implements OnInit {
   cambiarDatos(nombre: string, apellido:string, correo: string, telefono : string){
     let datos : any = {nombre,apellido,correo,telefono};
 
-    this.clienteService.update(datos,this.id).subscribe((res:any)=>{
+    this.adminService.update(datos,this.id).subscribe((res:any)=>{
       if(res.correcto){
         Swal.fire({
           icon: 'success',

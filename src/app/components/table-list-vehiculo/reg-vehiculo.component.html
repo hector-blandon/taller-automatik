@@ -22,13 +22,10 @@
             <div class="field-wrap">
                 <input type="number" required autocomplete="off" placeholder="Modelo" #modelo>
             </div>
-
-
             <div class="field-wrap">
-                <input type="password" required autocomplete="off" placeholder="Inserte una contraseña" #password>
+                <button type="button" class="button button-block" (click)="crearVehiculo(matricula.value, marca.value, color.value, modelo.value)">Registrar</button>
+                <button type="button" class="button button-block-1" (click)="cancelar()">Cancelar</button>
             </div>
-
-            <button type="button" class="button button-block">Registrar</button>
         </form>
 
     </div>

@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import {AdminService} from 'src/app/services/admin.service';
 import {Admin} from 'src/app/models/adminModel';
 import {CambioPasswordComponent} from 'src/app/pages/login/cambio-password.component';
+import {CambiosAdministradorComponent} from 'src/app/pages/cambios-administrador/cambios-administrador.component';
 import {MatDialog, MatDialogRef,MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { from } from 'rxjs';
 @Component({
@@ -48,12 +49,14 @@ export class DashboardComponent implements OnInit {
     });
 
   }
+  openDialogDatos(): void {
+    const dialogRef = this.dialog.open(CambiosAdministradorComponent, {
+      width: '500px',
+      data: { idAdmin : this.id}
+    });
 
-  // cambiarContraseña(nuevoPassword){
-  //   console.log(nuevoPassword);
-    
-
-  // }
+  }
+  
   
 
 

@@ -38,7 +38,7 @@ export class ActualizarAdminComponent implements OnInit {
     } else {
       this.admin.correo = correo;
       this.admin.telefono = telefono;
-      this.adminService.update(this.admin, '4').subscribe((res: any) => {
+      this.adminService.update(this.admin, 4).subscribe((res: any) => {
         Swal.fire({
           icon: 'success',
           title: res.mensaje,
