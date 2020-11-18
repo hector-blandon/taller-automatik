@@ -1,0 +1,101 @@
+<section>
+    <div class="container">
+        <div class="col-md-8">
+            <div class="card-header card-header-danger">
+                <h1 class="card-title">Perfil de cliente</h1>
+                <a class="btn btn-success" (click)="openDialogDatos()">
+                    <i class="fa fa-pencil-square-o fa-2x"></i> Modificar Datos
+                </a>
+            </div>
+            <div class="card-body text-center">
+                <div class="card-text">
+                    <h3 style="text-align: left;"><b>Nombre : </b><span style="font-size:30px;">{{this.nombre}}</span></h3>
+                    <h3 style="text-align: left;"><b>Apellido : </b><span style="font-size:30px;">{{this.apellido}}</span></h3>
+                    <h3 style="text-align: left;"><b>Correo : </b> <span style="font-size:30px;">{{this.correo}}</span></h3>
+                    <h3 style="text-align: left;"><b>Telefono : </b><span style="font-size:30px;">{{this.telefono}}</span></h3>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+<section>
+    <div class="container">
+        <div>
+            <div class="col-md-10 my-md-auto">
+                <button mat-raised-button class="btn btn-round btn-lg pull-right" style="background-color: blue; float: rigth;" (click)="crearVehiculo()">
+                    <a >
+                        <i class="fa fa-plus fa-2x text-white"></i>
+                    </a>
+                </button>
+            </div>
+            <h2><b>Vehiculos registrados a nombre del cliente :</b></h2>
+
+        </div>
+
+
+        <hr>
+        <div *ngIf="vacio">
+            <h3><span>No hay vehiculos registrados para este cliente</span></h3>
+            <div class="col-lg-4 col-md-4">
+                <a>
+                    <i class="fa fa-frown-o fa-5x "></i>
+                </a>
+            </div>
+
+        </div>
+        <div *ngIf="!vacio" class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">
+                        <th>
+                            Matricula
+                        </th>
+                        <th>
+                            Marca
+                        </th>
+                        <th>
+                            Modelo
+                        </th>
+                        <th>
+                            Color
+                        </th>
+                        <th>
+                            Id de cliente
+                        </th>
+                        <th>
+                            Opciones
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vehiculo of vehiculos; let i = index">
+                            <!-- <th scope="row">{{ i + 1 }}</th> -->
+
+                            <td>{{ vehiculo.matricula}}</td>
+                            <td>{{ vehiculo.marca}}</td>
+                            <td>{{ vehiculo.modelo}}</td>
+                            <td>{{ vehiculo.color}}</td>
+                            <td>{{ vehiculo.idCliente}}</td>
+
+                            <td>
+                                <a class="btn btn-primary btn-round text-white"><i class="fa fa-bar-chart-o" style="font-size:15px" aria-hidden="true"></i></a>
+                                <a class="btn btn-dark btn-round text-white"><i class="fa fa-pencil" style="font-size:15px"></i></a>
+                                <a class="btn btn-danger btn-round text-white" (click)="eliminarVehiculo(vehiculo.idVehiculo)"><i class="fa fa-trash-o" style="font-size:15px" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<app-sidebar></app-sidebar>
+
+<!-- <section>
+    <app-footer></app-footer>
+</section> -->

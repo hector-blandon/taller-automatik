@@ -38,6 +38,8 @@ import { RegMecanicoComponent } from './components/table-list-mecanico/reg-mecan
 import { RegVehiculoComponent } from './components/table-list-vehiculo/reg-vehiculo.component';
 import { RecuperacionContraseniaComponent } from './pages/login/recuperacion-contrasenia.component';
 import { CambioPasswordComponent } from './pages/login/cambio-password.component';
+import { CambiosAdministradorComponent } from './pages/cambios-administrador/cambios-administrador.component';
+import { DashboardClienteComponent } from './pages/dashboard-cliente/dashboard-cliente.component';
 
 @NgModule({
   declarations: [
@@ -66,13 +68,16 @@ import { CambioPasswordComponent } from './pages/login/cambio-password.component
     RegMecanicoComponent,
     RegVehiculoComponent,
     RecuperacionContraseniaComponent,
-    CambioPasswordComponent
+    CambioPasswordComponent,
+    CambiosAdministradorComponent,
+    DashboardClienteComponent
   ],
   imports: [
     BrowserModule,
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
+    FormsModule ,
     // AppRoutingModule,
     APP_ROUTING,
     MatSidenavModule,

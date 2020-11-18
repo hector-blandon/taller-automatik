@@ -8,10 +8,10 @@
                 <div class="card-text">
                     <h3 style="text-align: left;"><b>Nombre : </b><span style="font-size:30px;">{{this.nombre}}</span></h3>
                     <h3 style="text-align: left;"><b>Apellido : </b><span style="font-size:30px;">{{this.apellido}}</span></h3>
-                    <h3 style="text-align: left;"><b>Correo :</b> <span style="font-size:30px;">{{this.correo}}</span></h3>
+                    <h3 style="text-align: left;"><b>Correo : </b> <span style="font-size:30px;">{{this.correo}}</span></h3>
                     <h3 style="text-align: left;"><b>Telefono : </b><span style="font-size:30px;">{{this.telefono}}</span></h3>
                 </div>
-                <a href="#" class="btn btn-success">
+                <a (click)="openDialogDatos()" class="btn btn-success">
                     <i class="fa fa-pencil-square-o fa-2x"></i> Modificar Datos
                 </a>
                 <a (click)="openDialog()" class="btn btn-danger">
