@@ -17,14 +17,14 @@ export class ClienteService {
     });
   }
 
-  delete(id: string): Observable<any> {
+  delete(id: number): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.delete(this.baseUrl + '/clientes/eliminar/' + id, {
       headers: httpHeaders,
     });
   }
 
-  update(cliente: ClienteModel, id: string): Observable<any> {
+  update(cliente: ClienteModel, id: number): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.put(
       this.baseUrl + '/clientes/actualizar/' + id,

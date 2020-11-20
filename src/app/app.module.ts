@@ -41,6 +41,8 @@ import { CambioPasswordComponent } from './pages/login/cambio-password.component
 import { TableListServicioComponent } from './components/table-list-servicio/table-list-servicio.component';
 import { RegServicioComponent } from './components/table-list-servicio/reg-servicio.component';
 import { TableListServicioSidebarComponent } from './components/table-list-servicio-sidebar/table-list-servicio-sidebar.component';
+import { CambiosAdministradorComponent } from './pages/cambios-administrador/cambios-administrador.component';
+import { DashboardClienteComponent } from './pages/dashboard-cliente/dashboard-cliente.component';
 
 @NgModule({
   declarations: [
@@ -73,12 +75,15 @@ import { TableListServicioSidebarComponent } from './components/table-list-servi
     TableListServicioComponent,
     RegServicioComponent,
     TableListServicioSidebarComponent,
+    CambiosAdministradorComponent,
+    DashboardClienteComponent,
   ],
   imports: [
     BrowserModule,
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
+    FormsModule,
     // AppRoutingModule,
     APP_ROUTING,
     MatSidenavModule,

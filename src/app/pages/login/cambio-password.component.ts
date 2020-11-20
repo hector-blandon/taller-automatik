@@ -22,9 +22,6 @@ export class CambioPasswordComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // recibirId(idAdmin : number){
-  //   this.idAdmin = idAdmin;
-  // }
 
   cambiarPassword(nuevoPassword : string , confirmacion : string){
     let idAdmin = this.data.idAdmin;
@@ -38,7 +35,7 @@ export class CambioPasswordComponent implements OnInit {
   
       });
     } else {
-      // this.dashboard.cambiarContraseña(nuevoPassword);
+    
   
       let credenciales: any = { idAdmin,nuevoPassword};
       this.adminService.cambiarPassword(credenciales).subscribe((res: any) => {

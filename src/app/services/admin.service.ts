@@ -31,7 +31,6 @@ export class AdminService {
   }
 
   resetPassword(credenciales: any): Observable<any> {
-    console.log('llega a service');
     
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(
@@ -41,7 +40,6 @@ export class AdminService {
     );
   }
   cambiarPassword(credenciales: any): Observable<any> {
-    console.log('llega a service');
     
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(
@@ -51,14 +49,16 @@ export class AdminService {
     );
   }
 
-  delete(id: string): Observable<any> {
+  delete(id: number): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.delete(this.baseUrl + '/administrador/eliminar/' + id, {
       headers: httpHeaders,
     });
   }
 
-  update(admin: Admin, id: string): Observable<any> {
+  update(admin: Admin, id: number): Observable<any> {
+    console.log('service', id);
+    
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.put(
       this.baseUrl + '/administrador/actualizar/' + id,

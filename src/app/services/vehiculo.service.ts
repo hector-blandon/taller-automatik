@@ -21,7 +21,7 @@ export class VehiculoService {
     );
   }
 
-  delete(id: string): Observable<any> {
+  delete(id: number): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.delete(this.baseUrl + '/vehiculos/eliminar/' + id, {
       headers: httpHeaders,

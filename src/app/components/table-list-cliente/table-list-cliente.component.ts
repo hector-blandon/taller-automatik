@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../../services/clienteService';
 import { RegClienteComponent } from './reg-cliente.component';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-table-list-cliente',
@@ -12,7 +14,7 @@ export class TableListClienteComponent implements OnInit {
 public idTaller = 1;
   clientes = [];
   constructor(private clienteService: ClienteService,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog, private router:Router) { }
 
   ngOnInit() {
 
@@ -28,6 +30,22 @@ public idTaller = 1;
       width: '500px',
       data: {}
     });
+
+  }
+  eliminarCliente(idCliente: number){
+    this.clienteService.delete(idCliente).subscribe((res :any)=>{
+      Swal.fire({
+        icon: 'success',
+        title: res.mensaje,
+        showConfirmButton: true,
+        timer: 30000
+      });
+      window.location.reload();
+    })
+
+  }
+  openDashboardCliente(idCliente: number){
+    this.router.navigate(['/dashboardClientes/'+ `${idCliente}`]);
 
   }
 }

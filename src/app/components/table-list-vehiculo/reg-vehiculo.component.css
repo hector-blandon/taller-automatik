@@ -28,6 +28,7 @@ a:hover {
     background: rgba(19, 35, 47, 0.9);
     padding: 40px;
     max-width: 600px;
+    margin: 40px auto;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
@@ -166,7 +167,7 @@ textarea {
     outline: none;
     border-radius: 0;
     padding: 15px 0;
-    font-size: 2rem;
+    font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: .1em;
@@ -184,7 +185,14 @@ textarea {
 
 .button-block {
     display: block;
-    width: 100%;
+    width: 30%;
+    float: left;
+}
+
+.button-block-1 {
+    display: block;
+    width: 30%;
+    float: right;
 }
 
 .forgot {
@@ -192,8 +200,10 @@ textarea {
     text-align: right;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.link {
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+    top: 20;
+    font-size: 26px;
 }
