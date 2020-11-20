@@ -4,4 +4,5 @@ export class ServicioModel {
   status: boolean;
   idVehiculo: number;
   idMecanico: number;
+  idCliente: number;
 }

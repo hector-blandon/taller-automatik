@@ -12,17 +12,20 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class TableListServicioComponent implements OnInit {
   idVehiculo: number;
+  idCliente: number;
   servicios = [];
 
   constructor(
     private servicioService: ServicioService,
     public dialog: MatDialog,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params) => {
       this.idVehiculo = params['idVehiculo'];
+      this.idCliente = params['idCliente'];
     });
 
     this.servicioService.getAllV(this.idVehiculo).subscribe((resp) => {
@@ -33,12 +36,8 @@ export class TableListServicioComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(RegServicioComponent, {
       width: '500px',
-      data: {},
+      data: { idVehiculo: this.idVehiculo, idCliente: this.idCliente },
     });
-  }
-
-  update(id: number) {
-    console.log(id);
   }
 
   archive(id: number) {
@@ -51,5 +50,9 @@ export class TableListServicioComponent implements OnInit {
       });
       window.location.reload();
     });
+  }
+
+  openDashboardServicio(id: number) {
+    this.router.navigate(['/dashboardServicio/' + `${id}`]);
   }
 }

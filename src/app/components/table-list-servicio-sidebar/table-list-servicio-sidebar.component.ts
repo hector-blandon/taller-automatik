@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../services/servicio.service';
 import Swal from 'sweetalert2';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table-list-servicio-sidebar',
@@ -14,17 +15,14 @@ export class TableListServicioSidebarComponent implements OnInit {
 
   constructor(
     private servicioService: ServicioService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router
   ) {}
 
   ngOnInit() {
     this.servicioService.getAllT(this.idTaller).subscribe((resp) => {
       console.log(resp), (this.servicios = resp);
     });
-  }
-
-  update(id: number) {
-    console.log(id);
   }
 
   archive(id: number) {
@@ -37,5 +35,9 @@ export class TableListServicioSidebarComponent implements OnInit {
       });
       window.location.reload();
     });
+  }
+
+  openDashboardServicio(id: number) {
+    this.router.navigate(['/dashboardServicio/' + `${id}`]);
   }
 }

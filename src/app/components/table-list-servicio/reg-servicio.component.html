@@ -14,10 +14,10 @@
             </div>
 
             <div class="field-wrap">
-                <select class="form-control" required autocomplete="off" ngModel="mSeleccionado" (change)="guardarMecanicoSeleccionado()">
+                <select class="form-control" required autocomplete="off" (change)="guardarMecanicoSeleccionado($event)">
                     <option selected>Elige un mecánico</option>
                     <optgroup *ngFor="let mecanico of mecanicos">
-                        <option value id="idM">{{ mecanico.nombre }}</option>
+                        <option [value] = mecanico.idMecanico>{{ mecanico.nombre }}</option>
                     </optgroup>
                 </select>
             </div>

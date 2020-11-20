@@ -15,6 +15,8 @@ import { TableListPiezaComponent } from './components/table-list-pieza/table-lis
 import { TableListVehiculoComponent } from './components/table-list-vehiculo/table-list-vehiculo.component';
 import { TableListServicioComponent } from './components/table-list-servicio/table-list-servicio.component';
 import { TableListServicioSidebarComponent } from './components/table-list-servicio-sidebar/table-list-servicio-sidebar.component';
+import { DashboardServicioComponent } from './pages/dashboard-servicio/dashboard-servicio.component';
+
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'navbar', component: NavbarComponent },
@@ -32,10 +34,14 @@ const APP_ROUTES: Routes = [
   { path: 'piezas', component: TableListPiezaComponent },
   { path: 'vehiculos', component: TableListVehiculoComponent },
   {
-    path: 'serviciosVehiculo/:idVehiculo',
+    path: 'serviciosVehiculo/:idVehiculo/:idCliente',
     component: TableListServicioComponent,
   },
   { path: 'serviciosTaller', component: TableListServicioSidebarComponent },
+  {
+    path: 'dashboardServicio/:idServicio',
+    component: DashboardServicioComponent,
+  },
 
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
