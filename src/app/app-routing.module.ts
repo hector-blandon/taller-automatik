@@ -39,7 +39,7 @@ const APP_ROUTES: Routes = [
   },
   { path: 'serviciosTaller', component: TableListServicioSidebarComponent },
   {
-    path: 'dashboardServicio/:idServicio',
+    path: 'dashboardServicio/:idServicio/:idCliente/:idVehiculo',
     component: DashboardServicioComponent,
   },
 

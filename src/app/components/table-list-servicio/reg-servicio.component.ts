@@ -3,7 +3,7 @@ import { ServicioService } from '../../services/servicio.service';
 import Swal from 'sweetalert2';
 import { ServicioModel } from '../../models/servicio.model';
 import { ActivatedRoute } from '@angular/router';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-reg-servicio',
@@ -18,6 +18,7 @@ export class RegServicioComponent implements OnInit {
   constructor(
     private servicioService: ServicioService,
     private activatedRoute: ActivatedRoute,
+    public dialogRef: MatDialogRef<RegServicioComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 

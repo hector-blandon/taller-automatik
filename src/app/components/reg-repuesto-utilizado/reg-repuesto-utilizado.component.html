@@ -1,0 +1,26 @@
+<div class="form">
+    <h1>Agregar Repuesto Utilizado</h1>
+    <div class="tab-content">
+        <form action="/" method="post">
+
+            <div class="field-wrap">
+                <select class="form-control" required autocomplete="off" (change)="guardarPiezaSeleccionada($event)">
+                    <option selected>Elige una pieza</option>
+                    <optgroup *ngFor="let pieza of piezas">
+                        <option>{{ pieza.nombre }}</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="field-wrap">
+                <input type="number" required autocomplete="off" placeholder="Cantidad" #cantidad>
+            </div>
+
+            <div class="field-wrap">
+                <button type="button" class="button button-block" (click)="agregarRep(cantidad.value)">Agregar</button>
+                <button type="button" class="button button-block-1" (click)="cancelar()">Cancelar</button>
+            </div>
+        </form>
+
+    </div>
+</div>

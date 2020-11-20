@@ -1,1 +1,104 @@
-<p>dashboard-servicio works!</p>
+<section>
+    <div class="container">
+        <div class="col-md-8">
+            <div class="card-header card-header-danger">
+                <h1 class="card-title">Descripción del Servicio</h1>
+            </div>
+            <div class="card-body text-center">
+                <div class="card-text">
+                    <h3 style="text-align: left;"><b>Kilometraje: </b><span style="font-size:30px;">{{kilometraje}}</span></h3>
+                    <h3 style="text-align: left;"><b>Falla: </b><span style="font-size:30px;">{{falla}}</span></h3>
+                    <h3 style="text-align: left;"><b>Nit Cliente: </b> <span style="font-size:30px;">{{cliente.nit}}</span></h3>
+                    <h3 style="text-align: left;"><b>Matricula Vehículo: </b><span style="font-size:30px;">{{vehiculo.matricula}}</span></h3>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+<section>
+    <div class="container">
+        <div>
+            <div class="col-md-10 my-md-auto">
+                <button mat-raised-button class="btn btn-round btn-lg pull-right" style="background-color: blue; float: rigth;" (click)="agregarRepuesto()">
+                    <a >
+                        <i class="fa fa-plus fa-2x text-white"></i>
+                    </a>
+                </button>
+            </div>
+            <h2><b>Repuestos agregados al servicio:</b></h2>
+        </div>
+
+        <hr>
+
+        <div *ngIf="RepVacios">
+            <h3><span>No hay repuestos agregados para este servicio</span></h3>
+        </div>
+
+        <div *ngIf="!RepVacios" class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="text-primary">
+                        <th>
+                            Repuesto
+                        </th>
+                        <th>
+                            Cantidad
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let repuesto of repuestos">
+                            <td>{{ repuesto.idPieza }}</td>
+                            <td>{{ repuesto.cantidad }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <hr class="line">
+
+    <div class="container">
+        <div>
+            <div class="col-md-10 my-md-auto">
+                <button mat-raised-button class="btn btn-round btn-lg pull-right" style="background-color: blue; float: rigth;" (click)="agregarAccion()">
+                    <a >
+                        <i class="fa fa-plus fa-2x text-white"></i>
+                    </a>
+                </button>
+            </div>
+            <h2><b>Acciones realizadas al servicio:</b></h2>
+        </div>
+
+        <hr>
+
+        <div *ngIf="AccVacias">
+            <h3><span>No hay acciones realizadas para este servicio</span></h3>
+        </div>
+
+        <div *ngIf="!AccVacias" class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">
+                        <th>
+                            Descripción
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let accion of acciones">
+                            <td>{{ accion.descripcion }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-sidebar></app-sidebar>
+
+<!-- <section>
+    <app-footer></app-footer>
+</section> -->

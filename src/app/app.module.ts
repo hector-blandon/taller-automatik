@@ -44,6 +44,8 @@ import { TableListServicioSidebarComponent } from './components/table-list-servi
 import { CambiosAdministradorComponent } from './pages/cambios-administrador/cambios-administrador.component';
 import { DashboardClienteComponent } from './pages/dashboard-cliente/dashboard-cliente.component';
 import { DashboardServicioComponent } from './pages/dashboard-servicio/dashboard-servicio.component';
+import { RegRepuestoUtilizadoComponent } from './components/reg-repuesto-utilizado/reg-repuesto-utilizado.component';
+import { RegAccionRealizadaComponent } from './components/reg-accion-realizada/reg-accion-realizada.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +81,8 @@ import { DashboardServicioComponent } from './pages/dashboard-servicio/dashboard
     CambiosAdministradorComponent,
     DashboardClienteComponent,
     DashboardServicioComponent,
+    RegRepuestoUtilizadoComponent,
+    RegAccionRealizadaComponent,
   ],
   imports: [
     BrowserModule,

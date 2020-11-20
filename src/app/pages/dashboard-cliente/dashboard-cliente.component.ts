@@ -82,10 +82,4 @@ export class DashboardClienteComponent implements OnInit {
       window.location.reload();
     });
   }
-
-  verServicios(idVehiculo: number, idCliente: number) {
-    this.router.navigate([
-      '/serviciosVehiculo/' + `${idVehiculo}` + '/' + `${idCliente}`,
-    ]);
-  }
 }
