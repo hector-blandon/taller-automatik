@@ -9,12 +9,25 @@ import { ServicioModel } from '../../models/servicio.model';
   styleUrls: ['./reg-servicio.component.css'],
 })
 export class RegServicioComponent implements OnInit {
+  mecanicos = [];
+  mSeleccionado: any;
   constructor(private servicioService: ServicioService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const idTaller = 1;
+    this.servicioService.getAllM(idTaller).subscribe((resp) => {
+      console.log(resp), (this.mecanicos = resp);
+    });
+  }
 
-  save(fechaIngreso: string, kilometraje: number, falla: string) {
-    if (fechaIngreso === '' || kilometraje == null || falla === '') {
+  guardarMecanicoSeleccionado() {
+    console.log(this.mSeleccionado);
+    const mecanico = this.mSeleccionado;
+    console.log(mecanico);
+  }
+
+  save(kilometraje: number, falla: string) {
+    if (kilometraje == null || falla === '') {
       Swal.fire({
         icon: 'warning',
         title: 'debe diligenciar todos los campos!',
@@ -23,11 +36,14 @@ export class RegServicioComponent implements OnInit {
       });
     } else {
       const status = true;
+      const idMecanico = 2;
+      const idVehiculo = 11;
       const servicio: ServicioModel = {
-        fechaIngreso,
         kilometraje,
         falla,
         status,
+        idVehiculo,
+        idMecanico,
       };
       this.servicioService.save(servicio).subscribe((res: any) => {
         Swal.fire({

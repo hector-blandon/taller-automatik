@@ -50,4 +50,14 @@ export class ServicioService {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.put(this.baseUrl + '/servicios/archivar/' + id, {});
   }
+
+  getAllM(idTaller: number): Observable<any> {
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get(
+      this.baseUrl + '/mecanicos/buscarPorTaller/' + idTaller,
+      {
+        headers: httpHeaders,
+      }
+    );
+  }
 }

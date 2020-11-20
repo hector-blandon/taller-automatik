@@ -6,10 +6,6 @@
         <form action="/">
 
             <div class="field-wrap">
-                <input type="date" required autocomplete="off" placeholder="Fecha Ingreso" #fechaIngreso>
-            </div>
-
-            <div class="field-wrap">
                 <input type="number" required autocomplete="off" placeholder="Kilometraje" #kilometraje>
             </div>
 
@@ -17,7 +13,16 @@
                 <input type="text" required autocomplete="off" placeholder="Falla" #falla>
             </div>
 
-            <button type="submit" (click)="save(fechaIngreso.value, kilometraje.value, falla.value)" class="button button-block">Crear</button>
+            <div class="field-wrap">
+                <select class="form-control" required autocomplete="off" ngModel="mSeleccionado" (change)="guardarMecanicoSeleccionado()">
+                    <option selected>Elige un mecánico</option>
+                    <optgroup *ngFor="let mecanico of mecanicos">
+                        <option value id="idM">{{ mecanico.nombre }}</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <button type="submit" (click)="save(kilometraje.value, falla.value)" class="button button-block">Crear</button>
 
         </form>
 

@@ -3,6 +3,7 @@ import { ServicioService } from '../../services/servicio.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 import { RegServicioComponent } from './reg-servicio.component';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-table-list-servicio',
@@ -10,16 +11,21 @@ import { RegServicioComponent } from './reg-servicio.component';
   styleUrls: ['./table-list-servicio.component.css'],
 })
 export class TableListServicioComponent implements OnInit {
+  idVehiculo: number;
   servicios = [];
 
   constructor(
     private servicioService: ServicioService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    let idVehiculo = 1;
-    this.servicioService.getAllV(idVehiculo).subscribe((resp) => {
+    this.activatedRoute.params.subscribe((params) => {
+      this.idVehiculo = params['idVehiculo'];
+    });
+
+    this.servicioService.getAllV(this.idVehiculo).subscribe((resp) => {
       console.log(resp), (this.servicios = resp);
     });
   }
