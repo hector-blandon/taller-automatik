@@ -40,6 +40,12 @@ import { RecuperacionContraseniaComponent } from './pages/login/recuperacion-con
 import { CambioPasswordComponent } from './pages/login/cambio-password.component';
 import { CambiosAdministradorComponent } from './pages/cambios-administrador/cambios-administrador.component';
 import { DashboardClienteComponent } from './pages/dashboard-cliente/dashboard-cliente.component';
+import { TableListServicioComponent } from './components/table-list-servicio/table-list-servicio.component';
+import { RegServicioComponent } from './components/table-list-servicio/reg-servicio.component';
+import { TableListServicioSidebarComponent } from './components/table-list-servicio-sidebar/table-list-servicio-sidebar.component';
+import { DashboardServicioComponent } from './pages/dashboard-servicio/dashboard-servicio.component';
+import { RegRepuestoUtilizadoComponent } from './components/reg-repuesto-utilizado/reg-repuesto-utilizado.component';
+import { RegAccionRealizadaComponent } from './components/reg-accion-realizada/reg-accion-realizada.component';
 
 @NgModule({
   declarations: [
@@ -70,14 +76,20 @@ import { DashboardClienteComponent } from './pages/dashboard-cliente/dashboard-c
     RecuperacionContraseniaComponent,
     CambioPasswordComponent,
     CambiosAdministradorComponent,
-    DashboardClienteComponent
+    DashboardClienteComponent,
+    TableListServicioComponent,
+    RegServicioComponent,
+    TableListServicioSidebarComponent,
+    DashboardServicioComponent,
+    RegRepuestoUtilizadoComponent,
+    RegAccionRealizadaComponent,
   ],
   imports: [
     BrowserModule,
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    FormsModule ,
+    FormsModule,
     // AppRoutingModule,
     APP_ROUTING,
     MatSidenavModule,
@@ -85,12 +97,9 @@ import { DashboardClienteComponent } from './pages/dashboard-cliente/dashboard-c
     BrowserAnimationsModule,
     NgbModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
   ],
-  exports: [
-    MatSidenavModule,
-    MatDialogModule
-  ],
+  exports: [MatSidenavModule, MatDialogModule],
   providers: [],
   bootstrap: [AppComponent],
 })
