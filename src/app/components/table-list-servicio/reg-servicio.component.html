@@ -1,0 +1,31 @@
+<div class="form">
+
+    <div class="tab-content">
+        <h1>Crear Servicio</h1>
+
+        <form action="/">
+
+            <div class="field-wrap">
+                <input type="number" required autocomplete="off" placeholder="Kilometraje" #kilometraje>
+            </div>
+
+            <div class="field-wrap">
+                <input type="text" required autocomplete="off" placeholder="Falla" #falla>
+            </div>
+
+            <div class="field-wrap">
+                <select class="form-control" required autocomplete="off" (change)="guardarMecanicoSeleccionado($event)">
+                    <option selected>Elige un mecánico</option>
+                    <optgroup *ngFor="let mecanico of mecanicos">
+                        <option [value] = mecanico.idMecanico>{{ mecanico.nombre }}</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <button type="submit" (click)="save(kilometraje.value, falla.value)" class="button button-block">Crear</button>
+
+        </form>
+
+    </div>
+
+</div>
