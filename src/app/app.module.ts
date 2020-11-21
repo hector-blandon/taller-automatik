@@ -24,7 +24,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TableListAdministradorComponent } from './components/table-list-administrador/table-list-administrador.component';
-import { ActualizarAdminComponent } from './components/actualizar-admin/actualizar-admin.component';
 import { ActualizarClienteComponent } from './components/actualizar-cliente/actualizar-cliente.component';
 import { ActualizarMecanicoComponent } from './components/actualizar-mecanico/actualizar-mecanico.component';
 import { TableListClienteComponent } from './components/table-list-cliente/table-list-cliente.component';
@@ -46,6 +45,10 @@ import { TableListServicioSidebarComponent } from './components/table-list-servi
 import { DashboardServicioComponent } from './pages/dashboard-servicio/dashboard-servicio.component';
 import { RegRepuestoUtilizadoComponent } from './components/reg-repuesto-utilizado/reg-repuesto-utilizado.component';
 import { RegAccionRealizadaComponent } from './components/reg-accion-realizada/reg-accion-realizada.component';
+import { EliAdministradorComponent } from './components/table-list-administrador/eli-administrador.component';
+import { ActAdministradorComponent } from './components/table-list-administrador/act-administrador.component';
+import { TableListFabricantesComponent } from './components/table-list-fabricantes/table-list-fabricantes.component';
+import { RegFabricanteComponent } from './components/table-list-fabricantes/reg-fabricante.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,6 @@ import { RegAccionRealizadaComponent } from './components/reg-accion-realizada/r
     DashboardComponent,
     LoginComponent,
     TableListAdministradorComponent,
-    ActualizarAdminComponent,
     ActualizarClienteComponent,
     ActualizarMecanicoComponent,
     TableListClienteComponent,
@@ -83,6 +85,10 @@ import { RegAccionRealizadaComponent } from './components/reg-accion-realizada/r
     DashboardServicioComponent,
     RegRepuestoUtilizadoComponent,
     RegAccionRealizadaComponent,
+    EliAdministradorComponent,
+    ActAdministradorComponent,
+    TableListFabricantesComponent,
+    RegFabricanteComponent
   ],
   imports: [
     BrowserModule,
@@ -98,8 +104,12 @@ import { RegAccionRealizadaComponent } from './components/reg-accion-realizada/r
     NgbModule,
     HttpClientModule,
     MatDialogModule,
+    FormsModule
   ],
-  exports: [MatSidenavModule, MatDialogModule],
+  exports: [
+    MatSidenavModule,
+    MatDialogModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -2,17 +2,16 @@
     <app-sidebar></app-sidebar>
 </section>
 
-<section>
+<section style="padding-left: 60px !important;">
 
     <div class="main-content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 mt-5">
+                <div class="col-md-12 mt-2">
                     <div class="card">
                         <div class="card-header card-header-danger">
                             <div class="row">
                                 <div class="col-md-2 text-center">
-                                    <i class="fa fa-arrow-left fa-3x mx-3" [routerLink]="['/dashboard']"></i>
                                     <i class="fa fa-user fa-5x"></i>
                                 </div>
                                 <div class="col-md-8">
@@ -25,7 +24,7 @@
                                 </div>
 
                                 <div class="col-md-2">
-                                    <button mat-raised-button (click)="openDialog()" class="btn btn-round btn-lg pull-right" style="background-color: black;">
+                                    <button mat-raised-button (click)="agregar()" class="btn btn-round btn-lg pull-right" style="background-color: black;">
                                         <a >
                                             <i class="fa fa-plus fa-2x text-white"></i>
                                         </a>
@@ -63,8 +62,7 @@
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let admins of administradores; let i = index">
-                                            <th scope="row">{{ i + 1 }}</th>
-                                            <td>{{ admins.nombre}}</td>
+                                            <td>{{ admins.idAdmin}}</td>
                                             <td>{{ admins.nombre}}</td>
                                             <td>{{ admins.apellido}}</td>
                                             <td>{{ admins.nit}}</td>
@@ -72,8 +70,8 @@
                                             <td>{{ admins.correo}}</td>
 
                                             <td>
-                                                <a class="btn btn-primary btn-round text-white"><i class="fa fa-pencil" style="font-size:15px"></i></a>
-                                                <a class="btn btn-danger btn-round text-white"><i class="fa fa-trash-o" style="font-size:15px" aria-hidden="true"></i></a>
+                                                <a mat-raised-button (click)="actualizar(admins.idAdmin,admins.nombre, admins.apellido, admins.nit, admins.telefono, admins.correo, admins.contrasenia)" class="btn btn-primary btn-round text-white"><i class="fa fa-pencil" style="font-size:15px"></i></a>
+                                                <a mat-raised-button (click)="eliminar(admins.idAdmin, admins.nombre, admins.apellido)" class="btn btn-danger btn-round text-white"><i class="fa fa-trash-o" style="font-size:15px" aria-hidden="true"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>

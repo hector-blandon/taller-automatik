@@ -1,0 +1,26 @@
+<div class="form">
+    <h1>Eliminar Administrador</h1>
+    <div class="tab-content">
+        <form action="/" method="post">
+
+            <p class="text-center" style="color: white;"> ¿Está seguro de eliminar el administrador?
+                <div class="top-row">
+
+                    <h1><b>{{data.nombre}} {{data.apellido}}</b></h1>
+
+                </div>
+
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <button mat-raised-button (click)="eliminar(data.idAdmin)" type="button" class="button button-block">Si</button>
+                    </div>
+                    <div class="field-wrap">
+
+                        <button mat-raised-button [mat-dialog-close]="true" type="button" class="button button-block">No</button>
+
+                    </div>
+                </div>
+        </form>
+
+    </div>
+</div>

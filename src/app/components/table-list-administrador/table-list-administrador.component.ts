@@ -1,7 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { RegAdministradorComponent } from './reg-administrador.component';
+import { EliAdministradorComponent } from './eli-administrador.component';
+import { ActAdministradorComponent } from './act-administrador.component';
+
+export interface DialogData {
+  idAdmin: string;
+  nombre: string;
+  apellido: string;
+  nit: string;
+  telefono: string;
+  correo: string;
+  contrasenia: string;
+}
 
 @Component({
   selector: 'app-table-list-administrador',
@@ -9,22 +21,29 @@ import { RegAdministradorComponent } from './reg-administrador.component';
   styleUrls: ['./table-list-administrador.component.css']
 })
 export class TableListAdministradorComponent implements OnInit {
-public idTaller = 1;
+
+  public idTaller = 1;
   administradores = [];
-  constructor(private adminService: AdminService,
-              public dialog: MatDialog) { }
+
+  idAdmin: string;
+  nombre: string;
+  apellido: string;
+
+  constructor(public dialog: MatDialog,
+              private adminService: AdminService
+              ) { }
 
   ngOnInit() {
 
     this.adminService.getAll(this.idTaller)
-      .subscribe( resp => {
+      .subscribe(resp => {
         console.log(resp),
-        this.administradores = resp;
+          this.administradores = resp;
       });
- 
+
   }
 
-  openDialog(): void {
+  agregar(): void {
     const dialogRef = this.dialog.open(RegAdministradorComponent, {
       width: '500px',
       data: {}
@@ -32,4 +51,17 @@ public idTaller = 1;
 
   }
 
+  eliminar(idAdmin: number, nombre: string, apellido: string) {
+    const dialogRef = this.dialog.open(EliAdministradorComponent, {
+      width: '500px',
+      data: {idAdmin, nombre, apellido}
+    });
+  }
+
+  actualizar(idAdmin: number, nombre: string, apellido: string, nit: string, telefono: string, correo: string, contrasenia: string): void {
+    const dialogRef = this.dialog.open(ActAdministradorComponent, {
+      width: '800px',
+      data: {idAdmin, nombre, apellido, nit, telefono, correo, contrasenia}
+    });
+  }
 }

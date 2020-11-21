@@ -1,6 +1,7 @@
 <section>
     <app-sidebar></app-sidebar>
 </section>
+
 <section style="padding-left: 60px !important;">
 
     <div class="main-content">
@@ -11,19 +12,19 @@
                         <div class="card-header card-header-danger">
                             <div class="row">
                                 <div class="col-md-2 text-center">
-                                    <i class="fa fa-cogs fa-5x"></i>
+                                    <i class="fa fa-font fa-5x"></i>
                                 </div>
                                 <div class="col-md-8">
 
                                     <h2 class="card-title text-center">
                                         <a>
-                                            <span class="nav-text">Piezas</span>
+                                            <span class="nav-text">Fabricantes</span>
                                         </a>
                                     </h2>
                                 </div>
 
                                 <div class="col-md-2">
-                                    <button mat-raised-button (click)="openDialog()" class="btn btn-round btn-lg pull-right" style="background-color: black;">
+                                    <button mat-raised-button (click)="agregar()" class="btn btn-round btn-lg pull-right" style="background-color: black;">
                                         <a >
                                             <i class="fa fa-plus fa-2x text-white"></i>
                                         </a>
@@ -41,24 +42,32 @@
                                             ID
                                         </th>
                                         <th>
-                                            Nombre
+                                            Nit
                                         </th>
                                         <th>
-                                            Cantidad
+                                            Nombres
                                         </th>
                                         <th>
-                                            Valor
+                                            Dirección
+                                        </th>
+                                        <th>
+                                            Teléfono
+                                        </th>
+                                        <th>
+                                            Correo
                                         </th>
                                         <th>
                                             Opciones
                                         </th>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let pieza of piezas; let i = index">
-                                            <td>{{ pieza.idPieza}}</td>
-                                            <td>{{ pieza.nombre}}</td>
-                                            <td>{{ pieza.cantidad}}</td>
-                                            <td>{{ pieza.valor}}</td>
+                                        <tr *ngFor="let fabricante of fabricantes; let i = index">
+                                            <td>{{ fabricante.idFabricante}}</td>
+                                            <td>{{ fabricante.nit}}</td>
+                                            <td>{{ fabricante.nombre}}</td>
+                                            <td>{{ fabricante.direccion}}</td>
+                                            <td>{{ fabricante.telefono}}</td>
+                                            <td>{{ fabricante.email}}</td>
 
                                             <td>
                                                 <a class="btn btn-primary btn-round text-white"><i class="fa fa-pencil" style="font-size:15px"></i></a>
