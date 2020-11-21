@@ -16,6 +16,7 @@ import { TableListVehiculoComponent } from './components/table-list-vehiculo/tab
 import { TableListServicioComponent } from './components/table-list-servicio/table-list-servicio.component';
 import { TableListServicioSidebarComponent } from './components/table-list-servicio-sidebar/table-list-servicio-sidebar.component';
 import { DashboardServicioComponent } from './pages/dashboard-servicio/dashboard-servicio.component';
+import { TableListFabricantesComponent } from './components/table-list-fabricantes/table-list-fabricantes.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,22 +27,14 @@ const APP_ROUTES: Routes = [
   { path: 'factura', component: GenerarFacturaComponent },
   { path: 'administrador', component: TableListAdministradorComponent },
   { path: 'clientes', component: TableListClienteComponent },
-  {
-    path: 'dashboardClientes/:idCliente',
-    component: DashboardClienteComponent,
-  },
+  { path: 'fabricantes', component: TableListFabricantesComponent},
+  { path: 'dashboardClientes/:idCliente', component: DashboardClienteComponent },
   { path: 'mecanicos', component: TableListMecanicoComponent },
   { path: 'piezas', component: TableListPiezaComponent },
   { path: 'vehiculos', component: TableListVehiculoComponent },
-  {
-    path: 'serviciosVehiculo/:idVehiculo/:idCliente',
-    component: TableListServicioComponent,
-  },
+  { path: 'serviciosVehiculo/:idVehiculo/:idCliente', component: TableListServicioComponent },
   { path: 'serviciosTaller', component: TableListServicioSidebarComponent },
-  {
-    path: 'dashboardServicio/:idServicio/:idCliente/:idVehiculo',
-    component: DashboardServicioComponent,
-  },
+  { path: 'dashboardServicio/:idServicio/:idCliente/:idVehiculo', component: DashboardServicioComponent },
 
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

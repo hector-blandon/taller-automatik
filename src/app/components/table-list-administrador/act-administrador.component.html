@@ -1,0 +1,55 @@
+<div class="form">
+
+    <div class="tab-content">
+        <h1>Actualizar Administrador</h1>
+
+        <form action="/" method="post">
+
+            <table class="table">
+                <thead class=" text-primary">
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Nombres
+                    </th>
+                    <th>
+                        Apellidos
+                    </th>
+                    <th>
+                        Nit
+                    </th>
+                    <th>
+                        Teléfono
+                    </th>
+                    <th>
+                        Correo
+                    </th>
+                </thead>
+                <tbody style="color: white;">
+                    <td><input type="text" readonly required autocomplete="off" value="{{ data.idAdmin}}" #id> </td>
+                    <td><input type="text" required autocomplete="off" value="{{ data.nombre}}" #nombre> </td>
+                    <td><input type="text" required autocomplete="off" value="{{ data.apellido}}" #apellido> </td>
+                    <td><input type="text" required autocomplete="off" value="{{ data.nit}}" #nit> </td>
+                    <td><input type="text" required autocomplete="off" value="{{ data.telefono}}" #telefono> </td>
+                    <td><input type="text" required autocomplete="off" value="{{ data.correo}}" #correo> </td>
+                    <td><input type="text" hidden required autocomplete="off" value="{{ data.contrasenia}}" #contrasenia> </td>
+
+                </tbody>
+            </table>
+
+            <div class="top-row">
+                <div class="field-wrap">
+                    <button title="Actualizar" type="button" class="button button-block" (click)="update(id.value, nombre.value, apellido.value, nit.value, telefono.value, correo.value, contrasenia.value)">Actualizar</button>
+                </div>
+                <div class="field-wrap">
+                    <button title="Cancelar" type="button" class="button button-block" [mat-dialog-close]="true">Cancelar</button>
+                </div>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>

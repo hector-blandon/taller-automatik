@@ -13,7 +13,7 @@ export class AdminService {
   constructor(private http: HttpClient) { }
 
   saveA(admin: Admin): Observable<any> {
-    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' }); 
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(
       this.baseUrl + '/administrador',
       JSON.stringify(admin),
@@ -31,7 +31,6 @@ export class AdminService {
   }
 
   resetPassword(credenciales: any): Observable<any> {
-    
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(
       this.baseUrl + '/resetPassword',
@@ -39,8 +38,9 @@ export class AdminService {
       { headers: httpHeaders }
     );
   }
+
   cambiarPassword(credenciales: any): Observable<any> {
-    
+
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(
       this.baseUrl + '/cambiarPassword',
@@ -57,8 +57,6 @@ export class AdminService {
   }
 
   update(admin: Admin, id: number): Observable<any> {
-    console.log('service', id);
-    
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.put(
       this.baseUrl + '/administrador/actualizar/' + id,
