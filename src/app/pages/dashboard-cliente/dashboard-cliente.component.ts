@@ -73,15 +73,30 @@ export class DashboardClienteComponent implements OnInit {
   
 }
   eliminarVehiculo(idVehiculo: number){
-    this.vehiculoService.delete(idVehiculo).subscribe((res :any)=>{
-      Swal.fire({
-        icon: 'success',
-        title: res.mensaje,
-        showConfirmButton: true,
-        timer: 30000
-      });
-      window.location.reload();
-    })
+    Swal.fire({
+      title: "Eliminar Vehiculo",
+      text: "¿Estás seguro que deseas eliminar el vehículo?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "Cancelar",
+  })
+  .then(resultado => {
+      if (resultado.value) {
+        this.vehiculoService.delete(idVehiculo).subscribe((res :any)=>{
+          Swal.fire({
+            icon: 'success',
+            title: res.mensaje,
+            showConfirmButton: true,
+            timer: 30000
+          });
+          window.location.reload();
+        })
+      } else {
+        window.location.reload();
+      }
+  });
+    
 
   }
 
