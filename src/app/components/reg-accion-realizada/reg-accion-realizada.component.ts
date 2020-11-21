@@ -27,7 +27,7 @@ export class RegAccionRealizadaComponent implements OnInit {
         timer: 5000,
       });
     } else {
-      const idServicio = this.data;
+      const idServicio = this.data.idServicio;
 
       const accion: AccionRealizada = { descripcion, valor, idServicio };
       this.servicioService.saveAcc(accion).subscribe((res: any) => {

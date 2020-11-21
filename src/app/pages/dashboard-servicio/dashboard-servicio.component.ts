@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Vehiculo } from 'src/app/models/vehiculo.model';
 import { ClienteModel } from '../../models/cliente.model';
 import { ServicioService } from '../../services/servicio.service';
 import { RegRepuestoUtilizadoComponent } from 'src/app/components/reg-repuesto-utilizado/reg-repuesto-utilizado.component';
 import { RegAccionRealizadaComponent } from 'src/app/components/reg-accion-realizada/reg-accion-realizada.component';
 import { MatDialog } from '@angular/material/dialog';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard-servicio',
@@ -27,8 +26,7 @@ export class DashboardServicioComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private servicioService: ServicioService,
-    public dialog: MatDialog,
-    private router: Router
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {

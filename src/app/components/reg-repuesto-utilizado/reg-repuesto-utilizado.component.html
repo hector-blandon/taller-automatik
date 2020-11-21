@@ -7,7 +7,7 @@
                 <select class="form-control" required autocomplete="off" (change)="guardarPiezaSeleccionada($event)">
                     <option selected>Elige una pieza</option>
                     <optgroup *ngFor="let pieza of piezas">
-                        <option>{{ pieza.nombre }}</option>
+                        <option [value] = pieza.idPieza>{{ pieza.nombre }}</option>
                     </optgroup>
                 </select>
             </div>

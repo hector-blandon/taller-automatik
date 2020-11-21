@@ -57,9 +57,7 @@ export class ServicioService {
 
   archive(id: number): Observable<any> {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.put(this.baseUrl + '/servicios/archivar/' + id, {
-      headers: httpHeaders,
-    });
+    return this.http.put(this.baseUrl + '/servicios/archivar/' + id, {});
   }
 
   getAllM(idTaller: number): Observable<any> {

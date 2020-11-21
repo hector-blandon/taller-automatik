@@ -33,9 +33,8 @@ export class RegServicioComponent implements OnInit {
   }
 
   guardarMecanicoSeleccionado(event) {
-    const i = event.target.value;
-    const mecanico = this.mecanicos[i - 1];
-    this.idMecanico = mecanico.idMecanico;
+    const id = event.target.value;
+    this.idMecanico = id;
   }
 
   save(kilometraje: number, falla: string) {

@@ -37,7 +37,14 @@ export class TableListServicioSidebarComponent implements OnInit {
     });
   }
 
-  openDashboardServicio(id: number) {
-    this.router.navigate(['/dashboardServicio/' + `${id}`]);
+  openDashboardServicio(id: number, idCliente: number, idVehiculo: number) {
+    this.router.navigate([
+      '/dashboardServicio/' +
+        `${id}` +
+        '/' +
+        `${idCliente}` +
+        '/' +
+        `${idVehiculo}`,
+    ]);
   }
 }

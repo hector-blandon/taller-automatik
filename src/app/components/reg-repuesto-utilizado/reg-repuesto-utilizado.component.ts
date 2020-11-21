@@ -35,7 +35,7 @@ export class RegRepuestoUtilizadoComponent implements OnInit {
         timer: 5000,
       });
     } else {
-      const idServicio = this.data;
+      const idServicio = this.data.idServicio;
       const idPieza = this.idPieza;
 
       const repuesto: RepuestoUtilizado = { cantidad, idPieza, idServicio };
@@ -56,8 +56,7 @@ export class RegRepuestoUtilizadoComponent implements OnInit {
   }
 
   guardarPiezaSeleccionada(event) {
-    const i = event.target.value;
-    const pieza = this.piezas[i - 1];
-    this.idPieza = pieza.idPieza;
+    const id = event.target.value;
+    this.idPieza = id;
   }
 }
