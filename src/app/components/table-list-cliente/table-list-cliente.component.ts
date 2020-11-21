@@ -33,17 +33,31 @@ public idTaller = 1;
 
   }
   eliminarCliente(idCliente: number){
-    this.clienteService.delete(idCliente).subscribe((res :any)=>{
-      Swal.fire({
-        icon: 'success',
-        title: res.mensaje,
-        showConfirmButton: true,
-        timer: 30000
-      });
-      window.location.reload();
-    })
+    Swal.fire({
+      title: "Eliminar Cliente",
+      text: "¿Estás seguro que deseas eliminar el cliente?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "Cancelar",
+  })
+  .then(resultado => {
+      if (resultado.value) {
+        this.clienteService.delete(idCliente).subscribe((res :any)=>{
+          Swal.fire({
+            icon: 'success',
+            title: res.mensaje,
+            showConfirmButton: true,
+            timer: 30000
+          });
+          window.location.reload();
+        })
+      } else {
+        window.location.reload();
+      }
+  });
+}
 
-  }
   openDashboardCliente(idCliente: number){
     this.router.navigate(['/dashboardClientes/'+ `${idCliente}`]);
 
